@@ -1,0 +1,6 @@
+class Scene < ApplicationRecord
+
+
+
+
+end

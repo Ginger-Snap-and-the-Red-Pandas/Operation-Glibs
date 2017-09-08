@@ -1,0 +1,8 @@
+class GeneratedWord  < ApplicationRecord
+
+
+
+
+
+
+end

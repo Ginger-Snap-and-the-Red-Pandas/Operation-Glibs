@@ -1,0 +1,7 @@
+class Genre < ApplicationRecord
+
+
+
+
+
+end

@@ -1,0 +1,6 @@
+class Picture < ApplicationRecord
+
+
+
+
+end

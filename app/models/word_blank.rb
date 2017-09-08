@@ -1,0 +1,6 @@
+class WordBlank < ApplicationRecord
+
+
+
+
+end

@@ -1,0 +1,6 @@
+class Story < ApplicationRecord
+
+
+
+
+end
