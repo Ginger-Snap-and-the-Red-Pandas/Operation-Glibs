@@ -4,6 +4,4 @@ class GeneratedWord  < ApplicationRecord
   belongs_to :word_blank
 
 
-
-
 end
