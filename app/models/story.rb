@@ -8,5 +8,5 @@ class Story < ApplicationRecord
   has_many :generated_words
   has_many :word_blanks, through: :generated_words
 
-
+  validates :genre_id, :script_id, presence: :true
 end
