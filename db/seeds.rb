@@ -27,3 +27,5 @@
 
 
 "I saw a #{@scene.word_blanks[0].where(story_id: @story.id)}"
+
+"<%= @caption %>"

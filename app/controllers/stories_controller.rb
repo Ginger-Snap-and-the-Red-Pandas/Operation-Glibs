@@ -23,12 +23,14 @@ class StoriesController < ApplicationController
     end
 
 
-
     @scenes.length.times do |i|
       @word_blanks = @scenes[i].word_blanks
-      labeled_photo_words = labeled_tags[i]
-      #This method takes in a series of hashed words/tags, then with each word_blank creates a generated word for each one which is also attached to this instance of the story
-      generate_glibs(labeled_photo_words, @word_blanks, @story)
+      labeled_photo_words = labeled_tags[i][1]
+      @word_blanks.each do |word_blank|
+
+        #This method takes in a series of hashed words/tags, then with each word_blank creates a generated word. Each generated word has a story_id of @story.id
+        generate_glibs(labeled_photo_words, word_blank, @story)
+      end
       i += 1
     end
 
