@@ -1,13 +1,18 @@
+require 'net/http'
+require 'json'
+
 module AnalyzableHelper
 
   def self.picling(user_url)
-      pic_data_set = AnalyzableHelper.pic_call(user_url)
+      pic_data_set = self.pic_call(user_url)
       pulled_tags = [pic_data_set[0]]
       pulled_caption = [pic_data_set[1]]
-      pulled_POS = AnalyzableHelper.ling_call(pulled_tags)
-      p [pulled_caption, pulled_tags, pulled_POS]
+      pulled_POS = self.ling_call(pulled_tags)
+      return [pulled_caption, pulled_tags, pulled_POS]
   end
 
+
+private
   def self.pic_call(user_url)
     uri = URI('https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/analyze')
     uri.query = URI.encode_www_form({
@@ -24,12 +29,12 @@ module AnalyzableHelper
         http.request(request)
     end
 
-    puts response.body
+    # puts response.body
     photo_data = JSON.parse(response.body)
     tags = photo_data["description"]["tags"]
     caption = photo_data["description"]["captions"][0]["text"]
     all_pic_data = [tags, caption]
-    p all_pic_data
+    return all_pic_data
 
   end
 
@@ -54,9 +59,9 @@ module AnalyzableHelper
           http.request(request)
       end
 
-    puts response.body
+    # puts response.body
     ling_data = JSON.parse(response.body)
     word_pos = ling_data[0]["result"]
-    p word_pos.flatten
+    return word_pos.flatten
   end
 end
