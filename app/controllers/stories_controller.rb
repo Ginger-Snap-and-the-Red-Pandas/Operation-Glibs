@@ -7,6 +7,9 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new
+    @genre = Genre.first
+    @story.genre = @genre
+    @story.script = @genre.script.sample
     if @story.save
       redirect_to @story
     else
