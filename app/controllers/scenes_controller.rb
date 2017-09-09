@@ -22,7 +22,8 @@ class ScenesController < ApplicationController
     @pictures << @picture_one
     @pictures.each do |picture|
       #Maybe turn tags into hash on this line
-      labeled_tags << AnalyzableHelper.picling(picture.url)
+      labeled_tags = AnalyzableHelper.picling(picture.url)
+
     end
 
     @labeled_tags = labeled_tags
