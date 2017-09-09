@@ -7,5 +7,5 @@ class Script < ApplicationRecord
   has_many :scenes
   has_many :word_blanks, through: :scenes
 
-
+  validates :name, :genre_id, presence: :true
 end

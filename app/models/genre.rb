@@ -5,7 +5,7 @@ class Genre < ApplicationRecord
   has_many :stories
   has_many :pictures, through: :stories
 
-
+  validates :genre_name, presence: :true
 
 
 
