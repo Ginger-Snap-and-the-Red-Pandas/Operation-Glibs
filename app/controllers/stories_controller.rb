@@ -16,7 +16,7 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.new
-    redirect_to Story.scenes.first
+    redirect_to @story.scenes.first
   end
 
 end
