@@ -35,10 +35,13 @@
 
 ### HOW TO WRITE A SCRIPT ###
 # STEP ONE:
-#   Write your script dialogue below for each scene.
-#   Anytime you write a glib in the dialogue, (i.e. '*word' ), add that glib's word type into the Glib_Word_Types array for that scene.
-# => NOTE: Expect all verbs in your story to end in the suffix "-ing", because that's what the photo API returns
+#   Write your script_title, followed by the script dialogue for each scene below.
+#   NOTE_ONE: Anytime you write a glib in the dialogue, (i.e. '*word' ), add that glib's word type into the Glib_Word_Types array for that scene.
+#   NOTE_TWO: Expect all verbs in your story to end in the suffix "-ing", because that's what the photo API returns
 
+
+################
+###Script Title:
 
 ################
 ###Act One:
@@ -67,8 +70,18 @@
 ################
 
 
-# 2)
+# STEP TWO:
+# Copy your script's name over the ENTER-SCRIPT-NAME-HERE placeholder
 
+@script = Script.create!(name: "ENTER-SCRIPT-NAME-HERE", genre: @alien_genre)
+
+
+# STEP THREE:
+# Copy your scene text into each of the Scene.create!s's dialogue sections over the ENTER-SCENE-#-DIALOGUE-HERE placeholder
+
+@scene_one = Scene.create!(script: @script, script_position: 1, dialogue: "ENTER-SCENE-ONE-DIALOGUE-HERE")
+@scene_two = Scene.new(script: @script, script_position: 2, dialogue:"ENTER-SCENE-TWO-DIALOGUE-HERE")
+@scene_three = Scene.new(script: @script, script_position: 3, dialogue:"ENTER-SCENE-THREE-DIALOGUE-HERE")
 
 
 
