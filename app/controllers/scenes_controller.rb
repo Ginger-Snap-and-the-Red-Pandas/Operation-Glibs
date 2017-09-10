@@ -38,9 +38,10 @@ class ScenesController < ApplicationController
 
 
   def show
-    @scene = Scene.find(:id)
+    @story = Story.find(params[:story_id])
+    @scene = Scene.find(params[:id])
     @generated_words = @story.generated_words.where(scene_id: @scene.id)
-    @generated_words.sort!{|word| word.word_blank.position}
+    @generated_words.sort!{|word| word.word_blank.scene_position}
     @generated_words.map!{|generated_word| generated_word.word}
 
     render @scene
