@@ -5,6 +5,7 @@ module AnalyzableHelper
 
   def self.picling(user_url)
       pic_data_set = self.pic_call(user_url)
+      #Refactor lines 9 and 10 if possible
       if pic_data_set.is_a? String
         return pic_data_set
       end
@@ -42,7 +43,7 @@ private
     # puts response.body
     photo_data = JSON.parse(response.body)
     if photo_data["description"] == nil
-      @error = "One or more of the photos you entered is/are too large"
+      @error = "Error, going back to the top-side to tell everyone about it!!!"
       return @error
     end
 

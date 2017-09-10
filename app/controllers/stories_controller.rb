@@ -43,10 +43,6 @@ class StoriesController < ApplicationController
         josh += 1
       end
 
-      p "BANANA" * 50
-      p @error
-      p "You made it past the analysis loop...good job?"
-
       if @error
         return render 'new'
       end
@@ -56,13 +52,9 @@ class StoriesController < ApplicationController
       #Dillon: "It might work, let's see"
       @scenes.length.times do |i|
         @word_blanks = @scenes[i].word_blanks
-        # p "8" * 888
         photo_caption = labeled_tags[i][0]
         labeled_photo_words = labeled_tags[i][1]
-        # p "8" * 888
-        # p @word_blanks.class
         @word_blanks = @word_blanks.to_ary
-
         @caption_blank = @word_blanks.shift
           #Keep this before generate_glibs in calls, this stores the photos description as the FIRST generated_word for a scene
         store_scene_caption(photo_caption, @caption_blank, @story)
