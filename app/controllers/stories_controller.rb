@@ -24,12 +24,16 @@ class StoriesController < ApplicationController
     if @story.save
 
       @picture_one = Picture.create(story: @story, scene: @scenes[0], url: picture_params[:url1])
-      @picture_two = Picture.create(story: @story, scene: @scenes[0], url: picture_params[:url2])
-      @picture_three = Picture.create(story: @story, scene: @scenes[0], url: picture_params[:url3])
+      @picture_two = Picture.create(story: @story, scene: @scenes[1], url: picture_params[:url2])
+      @picture_three = Picture.create(story: @story, scene: @scenes[2], url: picture_params[:url3])
 
+      p "88" * 88
+        p picture_params[:url2]
+         p picture_params[:url3]
 
-      @photos = []
-      @photos << @picture_one
+      p "88" * 88
+      @photos = [@picture_one, @picture_two, @picture_three]
+
 
       #analyze our photos
       labeled_tags = []
