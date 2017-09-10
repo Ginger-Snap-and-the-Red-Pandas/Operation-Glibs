@@ -29,7 +29,7 @@ class StoriesController < ApplicationController
 
       p "88" * 88
         p picture_params[:url2]
-         p picture_params[:url3]
+        p picture_params[:url3]
 
       p "88" * 88
       @photos = [@picture_one, @picture_two, @picture_three]
@@ -46,11 +46,12 @@ class StoriesController < ApplicationController
       #Dillon: "It might work, let's see"
       @scenes.length.times do |i|
         @word_blanks = @scenes[i].word_blanks
+        # p "8" * 888
         photo_caption = labeled_tags[i][0]
         labeled_photo_words = labeled_tags[i][1]
         # p "8" * 888
         # p @word_blanks.class
-        p @word_blanks = @word_blanks.to_ary
+        @word_blanks = @word_blanks.to_ary
 
         @caption_blank = @word_blanks.shift
           #Keep this before generate_glibs in calls, this stores the photos description as the FIRST generated_word for a scene
