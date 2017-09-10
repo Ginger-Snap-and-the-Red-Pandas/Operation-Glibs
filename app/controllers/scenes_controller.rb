@@ -2,7 +2,7 @@ class ScenesController < ApplicationController
 
 
   #This is our sandbox route to see what data we were working with, as well as check the API parsing methods
-  def index
+  # def index
     # @story = Story.new
     # @genre = Genre.first
     # # @pictures = params?
@@ -42,11 +42,10 @@ class ScenesController < ApplicationController
   def show
     @story = Story.find(params[:story_id])
     @scene = Scene.find(params[:id])
-    @generated_words = @story.generated_words.where(scene_id: @scene.id)
-    @generated_words.sort!{|word| word.word_blank.scene_position}
+    @generated_words = @story.generated_words
+    # p @generated_words
+    @generated_words = @generated_words.sort{|word| word.word_blank.scene_position}
     @generated_words.map!{|generated_word| generated_word.word}
-
-    render @scene
   end
 
 

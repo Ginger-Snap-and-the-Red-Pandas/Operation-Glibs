@@ -4,8 +4,8 @@ module StoryHelper
   def generate_glibs(photo_libs, word_blanks, story)
     categorized_words = categorize_words(photo_libs)
     word_blanks.each do |word_blank|
-      samples = categorize_words[word_blank.word_type]
-      generated_word.create!(word: samples.sample, story: story, word_blank: word_blank)
+      samples = categorized_words[word_blank.word_type]
+      GeneratedWord.create!(word: samples.sample, story: story, word_blank: word_blank)
     end
   end
 

@@ -13,7 +13,7 @@ class StoriesController < ApplicationController
 
     @story = Story.new(story_params)
     @genre = Genre.first
-    @script = @genre.script.sample
+    @script = @genre.scripts.sample
     @scenes = @script.scenes
 
     #Assign story attributes, so it can later be saved
@@ -31,7 +31,7 @@ class StoriesController < ApplicationController
       #analyze our photos
       labeled_tags = []
       @photos.each do |photo|
-        labeled_tags << analyze_photo(photo.url)
+        labeled_tags << AnalyzableHelper.picling(photo.url)
       end
 
       #generate the glibs for all of our scenes
@@ -40,14 +40,9 @@ class StoriesController < ApplicationController
       @scenes.length.times do |i|
         @word_blanks = @scenes[i].word_blanks
         labeled_photo_words = labeled_tags[i][1]
-        @word_blanks.each do |word_blank|
-
           #This method takes in a series of hashed words/tags, then with each word_blank creates a generated word. Each generated word has a story_id of @story.id
-          generate_glibs(labeled_photo_words, word_blank, @story)
-        end
-        i += 1
+          generate_glibs(labeled_photo_words, @word_blanks, @story)
       end
-
       redirect_to @story
     else
       render 'new'
@@ -57,7 +52,7 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
-    redirect_to @story.scenes.first
+    redirect_to story_scene_path(@story, @story.scenes.first)
   end
 
   private
