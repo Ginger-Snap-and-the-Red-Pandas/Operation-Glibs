@@ -23,7 +23,10 @@ class StoriesController < ApplicationController
     #Save that story!...finally, so nice
     if @story.save
 
-      @picture_one = Picture.create(story: @story, scene: @scenes[0], url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrCO_GbB69R8GXhmjyFgtibvgKgUZnh3PmcOwQfXaUJPjhtwqR4WifF2sp")
+      @picture_one = Picture.create(story: @story, scene: @scenes[0], url: picture_params[:url1])
+      @picture_two = Picture.create(story: @story, scene: @scenes[0], url: picture_params[:url2])
+      @picture_three = Picture.create(story: @story, scene: @scenes[0], url: picture_params[:url3])
+
 
       @photos = []
       @photos << @picture_one
