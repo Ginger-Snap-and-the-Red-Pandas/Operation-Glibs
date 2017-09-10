@@ -24,7 +24,7 @@ WordBlank.destroy_all
 @alien_genre = Genre.create!(genre_name: "Alien")
 @script = Script.create!(name: "Test Script", genre: @alien_genre)
 
-@scene_one = Scene.create!(script: @script, script_position: 1, dialogue: "On my most recent exploration mission of planet Terra, I learned about something called...*word.
+@scene_one = Scene.create!(script: @script, script_position: 1, dialogue: "On my most recent exploration mission of planet Terra, I learned about something called...*title.
 The first thing I encountered was *caption.
 It appears that these things called *word enjoy *word into and around *word.
 A *word detected me, so I escaped a *word and changed position.")
