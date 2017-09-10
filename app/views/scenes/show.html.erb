@@ -2,4 +2,18 @@
 
 <p><%= @dialogue %></p>
 
+
+
 <%= image_tag(@photo.url) %>
+<% if @scene != @scenes.first %><br>
+<%= link_to "Previous", story_scene_path(@story, @previous_scene) %>
+<% end %>
+<% if @scene != @scenes.last %>
+<%= link_to "Next", story_scene_path(@story, @next_scene) %>
+<% end %>
+<% if @scene == @scenes.last %>
+  <p>If you would like to share this story copy the link below: <br>
+    <em><strong>glibs.herokuapp.com/stories/<%=@story.id%></strong></em> <br><br>
+     <%= link_to "Make More Glibs", root_path %>
+  </p>
+<% end %>

@@ -16,7 +16,7 @@ A *word detected me, so I escaped a *word and changed position."
 
 
 Next, my Terra-nalyzer detected [caption].
-It appears that [noun](s) like [verb](ing) [noun](s).
+It appears that [noun](s) like *word(ing) [noun](s).
 
 
 
@@ -28,10 +28,12 @@ A [noun] detected me, so I escaped a [noun] and changed position."
 
 
 
-Next, my Terra-nalyzer detected [caption].
-It appears that [noun](s) like [verb](ing) [noun](s).
+Next, my Terra-nalyzer detected *caption.
+It appears that *word like *word *word.
+N V N
 
 Finally, the Gleep Glops back at the lab were excited to learn
-that, when a [noun] sees a [noun], [verb] occurs on all the [noun](s).
-Who would have guessed that [caption] would provide so much data?!?
-That concludes my presentation of [title].  Questions?
+that, when a *word sees a *word, *word occurs on all the *word.
+Who would have guessed that *caption would provide so much data?!?
+That concludes my presentation of *title.  Questions?
+N N V N
