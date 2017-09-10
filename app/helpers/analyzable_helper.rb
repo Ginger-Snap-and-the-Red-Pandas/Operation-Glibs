@@ -5,14 +5,21 @@ module AnalyzableHelper
 
   def self.picling(user_url)
       pic_data_set = self.pic_call(user_url)
-      pulled_tags = [pic_data_set[0]]
-      pulled_caption = [pic_data_set[1]]
+      pulled_tags = pic_data_set[0]
+      pulled_caption = pic_data_set[1]
       pulled_POS = self.ling_call(pulled_tags)
-      return [pulled_caption, pulled_tags, pulled_POS]
+      organized_data = self.arrange_photo_data(pulled_caption, pulled_tags, pulled_POS)
+      return [pulled_caption, organized_data]
   end
 
 
 private
+  def self.arrange_photo_data(pulled_caption, pulled_tags, pulled_POS)
+    organized_data = Hash[pulled_tags.zip(pulled_POS)]
+    # organized_data[:caption] = pulled_caption
+    organized_data
+  end
+
   def self.pic_call(user_url)
     uri = URI('https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/analyze')
     uri.query = URI.encode_www_form({
