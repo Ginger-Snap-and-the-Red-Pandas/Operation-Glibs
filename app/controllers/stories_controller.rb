@@ -24,12 +24,16 @@ class StoriesController < ApplicationController
     if @story.save
 
       @picture_one = Picture.create(story: @story, scene: @scenes[0], url: picture_params[:url1])
-      @picture_two = Picture.create(story: @story, scene: @scenes[0], url: picture_params[:url2])
-      @picture_three = Picture.create(story: @story, scene: @scenes[0], url: picture_params[:url3])
+      @picture_two = Picture.create(story: @story, scene: @scenes[1], url: picture_params[:url2])
+      @picture_three = Picture.create(story: @story, scene: @scenes[2], url: picture_params[:url3])
 
+      p "88" * 88
+        p picture_params[:url2]
+        p picture_params[:url3]
 
-      @photos = []
-      @photos << @picture_one
+      p "88" * 88
+      @photos = [@picture_one, @picture_two, @picture_three]
+
 
       #analyze our photos
       labeled_tags = []
@@ -42,11 +46,12 @@ class StoriesController < ApplicationController
       #Dillon: "It might work, let's see"
       @scenes.length.times do |i|
         @word_blanks = @scenes[i].word_blanks
+        # p "8" * 888
         photo_caption = labeled_tags[i][0]
         labeled_photo_words = labeled_tags[i][1]
         # p "8" * 888
         # p @word_blanks.class
-        p @word_blanks = @word_blanks.to_ary
+        @word_blanks = @word_blanks.to_ary
 
         @caption_blank = @word_blanks.shift
           #Keep this before generate_glibs in calls, this stores the photos description as the FIRST generated_word for a scene
