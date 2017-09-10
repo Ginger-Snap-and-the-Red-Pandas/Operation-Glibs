@@ -49,10 +49,10 @@ class ScenesController < ApplicationController
     @generated_words = @generated_words.sort{|word| word.word_blank.scene_position}
     @generated_words.map!{|generated_word| generated_word.word}
 
-    # @caption = @generated_words[0]
+    @caption = @generated_words.slice!(0)
 
     @dialogue.sub!("*title", @story.name)
-    # @dialogue.sub!("*caption", @)
+    @dialogue.sub!("*caption", @caption)
 
     @generated_words.each do |word|
       @dialogue.sub!("*word", word)

@@ -31,6 +31,8 @@ A *word detected me, so I escaped a *word and changed position.")
 # @scene_two = Scene.new(script: @script, script_position: 2, dialogue:)
 # @scene_three = Scene.new(script: @script, script_position: 3, dialogue:)
 
+
+WordBlank.create(scene: @scene_one, scene_position: 0, word_type: "caption")
 WordBlank.create(scene: @scene_one, scene_position: 1, word_type: "noun")
 WordBlank.create(scene: @scene_one, scene_position: 2, word_type: "verb")
 WordBlank.create(scene: @scene_one, scene_position: 3, word_type: "noun")

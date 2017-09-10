@@ -34,14 +34,18 @@ class StoriesController < ApplicationController
         labeled_tags << AnalyzableHelper.picling(photo.url)
       end
 
-      #generate the glibs for all of our scenes
+      ### Generate the glibs for all of our scenes!!!
       #Gabe: Trust us, this works. Don't worry about the man behind the curtain.
       #Dillon: "It might work, let's see"
       @scenes.length.times do |i|
         @word_blanks = @scenes[i].word_blanks
+        photo_caption = labeled_tags[i][0]
         labeled_photo_words = labeled_tags[i][1]
+        @caption_blank = @word_blanks.slice!(0)
+          #Keep this before generate_glibs in calls, this stores the photos description as the FIRST generated_word for a scene
+        story_scene_caption(photo_caption, @caption_blank, @story)
           #This method takes in a series of hashed words/tags, then with each word_blank creates a generated word. Each generated word has a story_id of @story.id
-          generate_glibs(labeled_photo_words, @word_blanks, @story)
+        generate_glibs(labeled_photo_words, @word_blanks, @story)
       end
       redirect_to @story
     else

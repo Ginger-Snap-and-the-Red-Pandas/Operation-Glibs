@@ -1,6 +1,12 @@
 module StoryHelper
 
 #This method takes in a series of hashed words/tags, then with each word_blank creates a generated word for each one which is also attached to this instance of the story
+
+  #Keep this before generate_glibs in calls, this stores the photos description as the FIRST generated_word for a story
+  def store_scene_caption(caption, caption_word_blank, story)
+    GeneratedWord.create!(word: caption, story: story, word_blank: word_blank)
+  end
+
   def generate_glibs(photo_libs, word_blanks, story)
     categorized_words = categorize_words(photo_libs)
     word_blanks.each do |word_blank|
