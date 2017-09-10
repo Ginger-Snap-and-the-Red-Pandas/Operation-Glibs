@@ -23,7 +23,7 @@ class StoriesController < ApplicationController
     #Save that story!...finally, so nice
     if @story.save
 
-      @picture_one = Picture.create(story: @story, scene: @scenes[0], url: "https://images-na.ssl-images-amazon.com/images/I/41dvu0nL%2BLL._SL500_AC_SS350_.jpg")
+      @picture_one = Picture.create(story: @story, scene: @scenes[0], url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrCO_GbB69R8GXhmjyFgtibvgKgUZnh3PmcOwQfXaUJPjhtwqR4WifF2sp")
 
       @photos = []
       @photos << @picture_one
@@ -41,9 +41,13 @@ class StoriesController < ApplicationController
         @word_blanks = @scenes[i].word_blanks
         photo_caption = labeled_tags[i][0]
         labeled_photo_words = labeled_tags[i][1]
-        @caption_blank = @word_blanks.slice!(0)
+        # p "8" * 888
+        # p @word_blanks.class
+        p @word_blanks = @word_blanks.to_ary
+
+        @caption_blank = @word_blanks.shift
           #Keep this before generate_glibs in calls, this stores the photos description as the FIRST generated_word for a scene
-        story_scene_caption(photo_caption, @caption_blank, @story)
+        store_scene_caption(photo_caption, @caption_blank, @story)
           #This method takes in a series of hashed words/tags, then with each word_blank creates a generated word. Each generated word has a story_id of @story.id
         generate_glibs(labeled_photo_words, @word_blanks, @story)
       end

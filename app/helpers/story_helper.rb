@@ -4,7 +4,7 @@ module StoryHelper
 
   #Keep this before generate_glibs in calls, this stores the photos description as the FIRST generated_word for a story
   def store_scene_caption(caption, caption_word_blank, story)
-    GeneratedWord.create!(word: caption, story: story, word_blank: word_blank)
+    GeneratedWord.create!(word: caption, story: story, word_blank: caption_word_blank)
   end
 
   def generate_glibs(photo_libs, word_blanks, story)

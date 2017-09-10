@@ -45,11 +45,11 @@ class ScenesController < ApplicationController
     @dialogue = @scene.dialogue
     # @dialogue[0] =
 
-    @generated_words = @story.generated_words
-    @generated_words = @generated_words.sort{|word| word.word_blank.scene_position}
-    @generated_words.map!{|generated_word| generated_word.word}
+    @generated_words = @story.generated_words.to_ary
+    # @generated_words = @generated_words
 
-    @caption = @generated_words.slice!(0)
+    @generated_words.map!{|generated_word| generated_word.word}
+    @caption = @generated_words.shift
 
     @dialogue.sub!("*title", @story.name)
     @dialogue.sub!("*caption", @caption)
