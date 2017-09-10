@@ -27,18 +27,28 @@ class StoriesController < ApplicationController
       @picture_two = Picture.create(story: @story, scene: @scenes[1], url: picture_params[:url2])
       @picture_three = Picture.create(story: @story, scene: @scenes[2], url: picture_params[:url3])
 
-      p "88" * 88
-        p picture_params[:url2]
-        p picture_params[:url3]
-
-      p "88" * 88
       @photos = [@picture_one, @picture_two, @picture_three]
 
 
       #analyze our photos
       labeled_tags = []
+      josh = 1
+      @error = nil
       @photos.each do |photo|
-        labeled_tags << AnalyzableHelper.picling(photo.url)
+        photo_details = AnalyzableHelper.picling(photo.url)
+        if photo_details.is_a? String
+          @error = "Photo # #{josh} is too large. Or the contractors MS sent us to process photos are on break and should try again. See if your photo is bigger than 4mb, otherwise try again...or give up. Whatever -Your Friends at Team GLIBS"
+        end
+        labeled_tags << photo_details
+        josh += 1
+      end
+
+      p "BANANA" * 50
+      p @error
+      p "You made it past the analysis loop...good job?"
+
+      if @error
+        return render 'new'
       end
 
       ### Generate the glibs for all of our scenes!!!
