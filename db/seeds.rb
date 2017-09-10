@@ -24,9 +24,9 @@ WordBlank.destroy_all
 @alien_genre = Genre.create!(genre_name: "Alien")
 @script = Script.create!(name: "Test Script", genre: @alien_genre)
 
-@scene_one = Scene.create!(script: @script, script_position: 1, dialogue: "On my most recent exploration mission of planet Terra, I learned about something called... <%= @story.name %>.
-The first thing I encountered was <%= @caption %>. It appears that these things called <%= @generated_words[0] %> enjoy <%= @generated_words[1] %> into and around <%= @generated_words[2] %>.
-A <%= @generated_words[3] %> detected me, so I escaped a <%= @generated_words[4] %> and changed position.")
+@scene_one = Scene.create!(script: @script, script_position: 1, dialogue: 'On my most recent exploration mission of planet Terra, I learned about something called... story.name.
+The first thing I encountered was caption. It appears that these things called "#{@generated_words[0]}"  enjoy "#{@generated_words[1]}" into and around "#{@generated_words[2]}".
+A "#{@generated_words[3]}" detected me, so I escaped a "#{@generated_words[4]}" and changed position.')
 # @scene_two = Scene.new(script: @script, script_position: 2, dialogue:)
 # @scene_three = Scene.new(script: @script, script_position: 3, dialogue:)
 

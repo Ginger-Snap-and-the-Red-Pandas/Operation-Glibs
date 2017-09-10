@@ -44,6 +44,10 @@ class ScenesController < ApplicationController
     @scene = Scene.find(params[:id])
     @generated_words = @story.generated_words
     # p @generated_words
+    @dialogue = @scene.dialogue
+    # @dialogue[0] =
+
+
     @generated_words = @generated_words.sort{|word| word.word_blank.scene_position}
     @generated_words.map!{|generated_word| generated_word.word}
   end
