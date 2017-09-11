@@ -4,8 +4,8 @@
 
 
 
-<%= image_tag(@photo.url) %>
-<% if @scene != @scenes.first %><br>
+<%= image_tag(@photo.url) %><br>
+<% if @scene != @scenes.first %>
 <%= link_to "Previous", story_scene_path(@story, @previous_scene) %>
 <% end %>
 <% if @scene != @scenes.last %>
