@@ -40,6 +40,8 @@ gem 'dotenv-rails'
 
 # Paperclip for user photo upload
 gem 'paperclip', '~> 5.0.0'
+# AWS for photo storage
+gem 'aws-sdk', '~> 2.3.0'
 
 
 group :development, :test do
