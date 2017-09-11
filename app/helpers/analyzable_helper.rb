@@ -56,7 +56,7 @@ private
   end
 
   def self.ling_call(word_array)
-    word_string = word_array.join(" ")
+    word_string = word_array.join(",")
     uri = URI('https://westus.api.cognitive.microsoft.com/linguistics/v1.0/analyze')
     uri.query = URI.encode_www_form({
         # 'visualFeatures' => 'Description',
@@ -79,6 +79,7 @@ private
     # puts response.body
     ling_data = JSON.parse(response.body)
     word_pos = ling_data[0]["result"]
+    word_pos.reject!{|item| item == ","}
     return word_pos.flatten
   end
 end
