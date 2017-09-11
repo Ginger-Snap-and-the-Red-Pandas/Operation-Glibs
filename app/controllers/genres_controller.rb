@@ -1,7 +1,7 @@
-class GenresController < ApplicationHelper
+class GenresController < ApplicationController
 
   def index
-
+    @genres = Genre.all
   end
 
 
