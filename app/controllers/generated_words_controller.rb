@@ -1,0 +1,4 @@
+class GeneratedWordsController < ApplicationController
+
+
+end

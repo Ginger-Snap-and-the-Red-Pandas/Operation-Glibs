@@ -23,11 +23,8 @@ class StoriesController < ApplicationController
     #Save that story!...finally, so nice
     if @story.save
 
-      @picture_one = Picture.create(story: @story, scene: @scenes[0], url: picture_params[:url1])
-      @picture_two = Picture.create(story: @story, scene: @scenes[1], url: picture_params[:url2])
-      @picture_three = Picture.create(story: @story, scene: @scenes[2], url: picture_params[:url3])
-
-      @photos = [@picture_one, @picture_two, @picture_three]
+      @photo_urls = [picture_params[:url1], picture_params[:url2], picture_params[:url3]]
+      @photos = create_story_pictures(@story, @scenes, @photo_urls)
 
 
       #analyze our photos
@@ -66,6 +63,11 @@ class StoriesController < ApplicationController
         generate_glibs(labeled_photo_words, @word_blanks, @story)
       end
       redirect_to @story
+
+
+
+
+
     else
       render 'new'
     end
