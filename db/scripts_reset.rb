@@ -172,12 +172,16 @@ s1_glib_word_types.each do |word_type|
   i += 1
 end
 
+WordBlank.create(scene: scene_two, scene_position: 0, word_type: "caption")
+
 
 i = 1
 s2_glib_word_types.each do |word_type|
   WordBlank.create(scene: scene_two, scene_position: i, word_type: word_type)
   i += 1
 end
+
+WordBlank.create(scene: scene_three, scene_position: 0, word_type: "caption")
 
 
 i = 1
