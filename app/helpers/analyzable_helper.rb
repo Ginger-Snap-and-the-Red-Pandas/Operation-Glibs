@@ -24,6 +24,7 @@ private
     organized_data
   end
 
+  # Input: image link, Output:
   def self.pic_call(user_url)
     uri = URI('https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/analyze')
     uri.query = URI.encode_www_form({

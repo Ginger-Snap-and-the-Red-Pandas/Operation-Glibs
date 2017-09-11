@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :stories, only: [:new, :create, :show] do
     resources :scenes, only: [:show]
+    # resources :pictures, only: [:create]
+    # resources :generated_words, only: [:create]
   end
 
   root 'stories#new'
