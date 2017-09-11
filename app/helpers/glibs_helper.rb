@@ -1,4 +1,4 @@
-module StoryHelper
+module GlibsHelper
 
 #This method takes in a series of hashed words/tags, then with each word_blank creates a generated word for each one which is also attached to this instance of the story
 

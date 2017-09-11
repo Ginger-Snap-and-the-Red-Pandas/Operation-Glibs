@@ -32,6 +32,22 @@ module StoryCreationHelper
       josh_error.empty? ? labeled_tags : @error
   end
 
+  def create_story_generated_words(labeled_tags, scenes, story)
+      scenes.length.times do |i|
+        word_blanks = scenes[i].word_blanks
+        photo_caption = labeled_tags[i][0]
+        labeled_photo_words = labeled_tags[i][1]
+        word_blanks = word_blanks.to_ary
+        caption_blank = word_blanks.shift
 
+          #Keep the store_scene_caption call before the generate_glibs call, as we storing the photo-caption as the FIRST generated_word for a scene
+
+        store_scene_caption(photo_caption, caption_blank, story)
+
+          #generate_glibs takes in a hashing of words/tags, then with each word_blank creates a generated word. Each generated word has a story_id of @story.id
+
+        generate_glibs(labeled_photo_words, word_blanks, story)
+      end
+  end
 
 end

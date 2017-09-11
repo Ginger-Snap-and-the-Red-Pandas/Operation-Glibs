@@ -1,5 +1,5 @@
 module ApplicationHelper
   include AnalyzableHelper
-  include StoryHelper
+  include GlibsHelper
   include StoryCreationHelper
 end
