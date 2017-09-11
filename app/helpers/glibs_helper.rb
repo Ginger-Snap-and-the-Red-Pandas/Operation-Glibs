@@ -36,7 +36,8 @@ module GlibsHelper
     dialogue.sub!("*caption", caption)
 
     generated_words.each do |word|
-      dialogue.sub!("*word", word)
+      glib = word.upcase
+      dialogue.sub!("*word", glib)
     end
     dialogue
   end
