@@ -6,11 +6,10 @@ class StoriesController < ApplicationController
   # end
 
   def create
-    p "88" * 88
-    p @story
+
     @story = Story.new(story_params)
-    @genre = Genre.first
-    @script = @genre.scripts.sample
+    @genre = Genre.find(params[:genre_id])
+    @script = Script.find(params[:script_id])
     @scenes = @script.scenes
 
     #Assign story attributes, so the story can be saved

@@ -7,7 +7,7 @@ class ScriptsController < ApplicationController
 
   def show
     @script = Script.find(params[:id])
-    @story = @script.story.new
+    @story = Story.new
 
     @script_scenes_dialogues = blank_glibs_for_script_show(@script)
 
