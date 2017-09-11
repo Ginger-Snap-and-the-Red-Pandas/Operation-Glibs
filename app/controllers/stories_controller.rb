@@ -28,7 +28,8 @@ class StoriesController < ApplicationController
       if labeled_tags.is_a? String
         @story.destroy
         @story = Story.new
-        return render 'new'
+        @script_scenes_dialogues = blank_glibs_for_script_show(@script)
+        return render 'scripts/show'
       end
 
       ### Generate the glibs for all of our scenes!!!
@@ -38,7 +39,8 @@ class StoriesController < ApplicationController
 
       redirect_to @story
     else
-      render 'new'
+      @script_scenes_dialogues = blank_glibs_for_script_show(@script)
+      render 'scripts/show'
     end
   end
 

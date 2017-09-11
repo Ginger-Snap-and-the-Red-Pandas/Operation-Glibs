@@ -9,16 +9,9 @@ class ScriptsController < ApplicationController
     @script = Script.find(params[:id])
     @story = Story.new
 
-    @script_scenes_dialogues = @script.scene_dialogues
-
-    @script_scenes_dialogues.each do |scene_dialogue|
-      scene_dialogue.sub!("*title", " your-story-title ")
-      scene_dialogue.sub!("*caption", " photo-description-sentence ")
-      scene_dialogue.gsub!("*word", " _____ ")
-    end
+    @script_scenes_dialogues = blank_glibs_for_script_show(@script)
 
     # Have this go to show page that shows new story form partials
-
     # render "stories/new"
   end
 
