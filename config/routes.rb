@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :genres, only: [:index] do
     resources :scripts, only: [:index, :show]
   end
-  resources :stories, only: [:new, :create, :show] do
+  resources :stories, only: [:create, :show] do
     resources :scenes, only: [:show]
     # resources :pictures, only: [:create]
     # resources :generated_words, only: [:create]

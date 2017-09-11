@@ -1,9 +1,9 @@
 class StoriesController < ApplicationController
 
-  def new
-    @story = Story.new
-    render "new"
-  end
+  # def new
+  #   @story = Story.new
+  #   render "new"
+  # end
 
   def create
     @story = Story.new(story_params)
