@@ -3,19 +3,15 @@
   <head>
     <title>Glibs</title>
     <%= csrf_meta_tags %>
-
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous">
-
-  </script>
+    <script>
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">
+    </script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
      <%= content_tag :body, data: { action: action_name, controller: controller_name }  do %>
     <%= yield %>
-    <%= yield :js %>
   <% end %>
 </html>
