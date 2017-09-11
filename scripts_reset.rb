@@ -116,7 +116,7 @@
 
 
 #s3_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
-#m(e.g. "noun", "verb", "adjective")
+# (e.g. "noun", "verb", "adjective")
 ################
 ##################
 
@@ -136,7 +136,7 @@
 
 
 ### STEP THREE ###
-# Copy-and-Paste your scene text over each corrsponding the ENTER-SCENE-#-DIALOGUE-HERE placeholders below
+# Copy-and-Paste your scene text over each corrsponding ENTER-SCENE-#-DIALOGUE-HERE placeholders below
 # Hint: The scene '#' tells you which scene's dialogue to use for that placeholder
 # hint_two: don't copy over the quotation marks surrounding the placeholder
 
@@ -179,9 +179,9 @@ end
 
 ## s2 (scene_two) here:
 
-s1_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
+s2_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
 i = 1
-s1_glib_word_types.each do |word_type|
+s2_glib_word_types.each do |word_type|
   WordBlank.create(scene: @scene_two, scene_position: i, word_type: word_type)
   i += 1
 end
@@ -189,9 +189,9 @@ end
 
 ## s3 (scene_three) here:
 
-s1_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
+s3_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
 i = 1
-s1_glib_word_types.each do |word_type|
+s3_glib_word_types.each do |word_type|
   WordBlank.create(scene: @scene_three, scene_position: i, word_type: word_type)
   i += 1
 end
