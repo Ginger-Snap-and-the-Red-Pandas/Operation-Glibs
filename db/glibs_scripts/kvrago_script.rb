@@ -107,7 +107,7 @@ scene_two_dialogue = " The *word quickly *word up to a *caption. I screamed! "
 
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
-s2_glib_word_types = [ "noun", "adverb", "verb" ]
+s2_glib_word_types = [ "noun", "verb" ]
 # ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
 ################
 ################
