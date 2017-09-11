@@ -22,25 +22,25 @@
 
 ## Cool, happy to see your enthusiasm.
 ## And good job on making it this far.
-## Our fool-proof technology appears to be working, unless you skipped the previous steps listed in "BEFORE YOU BEGIN". If you haven't followed them - Go back, do it again, do it right!
+## Our fool-proof technology appears to be working, unless you skipped the previous steps listed in "BEFORE YOU BEGIN." If you haven't followed them - go back, do it again, do it right!
 
 ###############################
 ######## WHAT IS THIS? ########
 ##### (AKA "DIRECTIONS") ######
 ###############################
 
-## Really...you're asking that now? Flying by the seat of your pants we see. The GLIBS Team approves.
+## Really...you're asking that now? Flying by the seat of your pants, we see. The GLIBS Team approves.
 
 ## You'll use this file to write a sample script.
-## By following these directions, you should end up with the proper syntax
+## By following these directions, you should end up with the proper syntax.
 ## Finally, you'll move that script into the seed file.
-## Don't worry - the directions below will tell you exactly what to copy and paste into the seeds.rb file
+## Don't worry - the directions below will tell you exactly what to copy and paste into the seeds.rb file.
 ## After all, what could possibly go wrong?
 
 ## (Other than you screwing up our seed file, thereby placing bad data inside our database...)
-## (...which then takes us hours to repair because you couldn't follow these complicated 'simple' directions...)
-## (...after which a child cries, because their perfect story pops out awful narrative)
-## (...thereby turning off the up-and-coming-next-once-in-a-lifetime-brilliant-photographer from even beginning a career in photography)
+## ...which then takes us hours to repair because you couldn't follow these complicated 'simple' directions...
+## ...after which a child cries, because their perfect story pops out awful narrative...
+## ...thereby turning off the up-and-coming-next-once-in-a-lifetime-brilliant-photographer from even beginning a career in photography.)
 
 ## Yeah, other than that whole thing ^ - what could possibly go wrong? Happy writing!
 
@@ -50,7 +50,7 @@
 ##### CHEAT SHEET #####
 #######################
 
-##The following are glibs placeholders, which are used to later insert random words into your scene dialogue for the adoring masses ##
+##The following are glibs placeholders, which are used to later insert random words into your scene dialogue for the adoring masses. ##
 
 # *title    -> the user's inputted story name
 # *caption  -> the scene_photo's caption (i.e. a descriptive sentence about the picture chosen)
@@ -67,18 +67,17 @@
 
 ### STEP ONE ###
 #   Write your script_title, followed by the script dialogue for each of the scenes listed below it.
-##  Please don't use the enter button/line breaks while writing dialogue.
-##  Each scene should consist of 2-to-4 sentences in length.
+##  Each scene should consist of 2 to 4 sentences in length.
 #
 #
-#   IMPORTANT_NOTE:
-##    Anytime you write a glib in the dialogue, (i.e. '*word' ), add that glib's word type into the  Glib_Word_Types array for that scene.
+#   IMPORTANT NOTE:
+##    Anytime you write a glib in the dialogue (i.e. '*word' ), add that glib's word type into the  Glib_Word_Types array for that scene.
 #
 # You're glib_word_types should ultimately end up looking something like this -
 # ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
 #
 #
-#   LESS_IMPORTANT_NOTE: Expect all verbs in your story to end in the suffix "-ing", because that's what the photo API returns
+#   LESS IMPORTANT NOTE: Expect all verbs in your story to end in the suffix "-ing", because that's what the photo API returns.
 
 ##################
 ################
