@@ -6,6 +6,7 @@ class ScriptsController < ApplicationController
   end
 
   def show
+    @genre = Genre.find(params[:genre_id])
     @script = Script.find(params[:id])
     @story = Story.new
 
