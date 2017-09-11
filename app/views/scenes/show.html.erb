@@ -3,8 +3,8 @@
 <p><%= @dialogue %></p>
 
 
-
-<%= image_tag(@photo.url) %>
+<%= image_tag(@photo.url, height: '720', width: '720' )%>
+<div id="animation"></div>
 <% if @scene != @scenes.first %><br>
 <%= link_to "Previous", story_scene_path(@story, @previous_scene) %>
 <% end %>
@@ -17,3 +17,7 @@
      <%= link_to "Make More Glibs", root_path %>
   </p>
 <% end %>
+
+
+
+

@@ -63,6 +63,9 @@ class StoriesController < ApplicationController
     else
       render 'new'
     end
+
+
+#
   end
 
 
