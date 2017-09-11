@@ -15,6 +15,7 @@
 ## ...unless you're bad at following directions. The Glibs Team isn't sure how to make them more-fool-proof ...you've also disappointed Ginger. Way to go champ, think on that.
 
 
+
 #####################################
 ##### I WANT TO WRITE A SCRIPT! #####
 #####################################
@@ -85,8 +86,7 @@ script_title = " YOUR-TITLE-HERE "
 
 
 
-
-###DO NOT USE LINE BREAKS/HIT THE RETURN KEY ANYWHERE IN YOUR SCRIPT###
+################
 ################
 ###Scene One Dialogue (Write it inside the quotation marks):
 scene_one_dialogue = " YOUR-DIALOGUE-HERE  "
@@ -99,7 +99,6 @@ scene_one_dialogue = " YOUR-DIALOGUE-HERE  "
 s1_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
 # ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
 ################
-###DO NOT USE LINE BREAKS/HIT THE RETURN KEY ANYWHERE IN YOUR SCRIPT###
 ################
 ###Scene Two Dialogue (Write it inside the quotation marks):
 scene_two_dialogue = " YOUR-DIALOGUE-HERE  "
@@ -112,7 +111,6 @@ scene_two_dialogue = " YOUR-DIALOGUE-HERE  "
 s2_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
 # ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
 ################
-###DO NOT USE LINE BREAKS/HIT THE RETURN KEY ANYWHERE IN YOUR SCRIPT###
 ################
 ###Scene Three Dialogue (Write it inside the quotation marks):
 scene_three_dialogue = " YOUR-DIALOGUE-HERE  "
@@ -124,11 +122,20 @@ scene_three_dialogue = " YOUR-DIALOGUE-HERE  "
 s3_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
 # ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
 ################
-##################
+################
+
+
+##### FINAL STEP #####
+# write an .rb file in glibs_scripts (it's a folder inside the db folder)
+# Name the rb file 'YOUR-SCRIPT-TITLE'.rb
+# Copy and paste ALL of the contents in this script rb into your new file
+# Good job!
+
+
 
 
 #################################################
-############ STOP!!!!!!! ########################
+############ !!!!!!STOP!!!!!!! ##################
 ########## IGNORE ALL LINES AFTER THIS ##########
 ########## YOUR SCRIPT WRITING IS DONE ##########
 #################################################
@@ -145,7 +152,7 @@ s3_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
 
 
 #################################################
-##########START OF SCRIPT CREATION###############
+########## START OF SCRIPT CREATION #############
 #################################################
 
 

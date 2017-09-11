@@ -81,7 +81,7 @@
 
 ##################
 ################
-script_title = " YOUR-TITLE-HERE "
+script_title = " SCRIPT ZEROTH "
 
 
 
