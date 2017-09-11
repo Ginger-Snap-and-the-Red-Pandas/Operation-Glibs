@@ -6,7 +6,10 @@ class ScriptsController < ApplicationController
   end
 
   def show
-
+    @script = Script.find(params[:id])
+    @story = Story.new
+    # Have this go to show page that shows new story form partials
+    # render "stories/new"
   end
 
 
