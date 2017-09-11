@@ -12,7 +12,7 @@
 #### You have now reset to an empty canvas in scripts.rb to write your
 # (un)doubtedly brilliant prose!
 
-## ...unless you're bad at following directions. The Glibs Team isn't sure how to make them more-idiot-proof ...you've also disappointed Ginger. Way to go champ, think on that.
+## ...unless you're bad at following directions. The Glibs Team isn't sure how to make them more-fool-proof ...you've also disappointed Ginger. Way to go champ, think on that.
 
 
 #####################################
@@ -21,7 +21,7 @@
 
 ## Cool, happy to see your enthusiasm.
 ## And good job on making it this far.
-## Our idiot-proof technology appears to be working, unless you skipped the previous steps listed in "BEFORE YOU BEGIN". If you haven't followed them - Go back, do it again, do it right!
+## Our fool-proof technology appears to be working, unless you skipped the previous steps listed in "BEFORE YOU BEGIN". If you haven't followed them - Go back, do it again, do it right!
 
 ###############################
 ######## WHAT IS THIS? ########
@@ -36,12 +36,12 @@
 ## Don't worry - the directions below will tell you exactly what to copy and paste into the seeds.rb file
 ## After all, what could possibly go wrong?
 
-## (Other than you screwing up our seed file, thereby placing by data inside our database...)
-## (...which then takes us hours to repair because you couldn't follow these complicated 'easy' directions...)
-## (...after which a child cries, because they're perfect story pops out awful narrative)
+## (Other than you screwing up our seed file, thereby placing bad data inside our database...)
+## (...which then takes us hours to repair because you couldn't follow these complicated 'simple' directions...)
+## (...after which a child cries, because their perfect story pops out awful narrative)
 ## (...thereby turning off the up-and-coming-next-once-in-a-lifetime-brilliant-photographer from even beginning a career in photography)
 
-## Yeah, other than that whole thing ^ - what could possibly go wrong?
+## Yeah, other than that whole thing ^ - what could possibly go wrong? Happy writing!
 
 
 
@@ -84,7 +84,7 @@
 ###Script Title:
 
 
-
+###DO NOT USE LINE BREAKS/HIT THE RETURN KEY ANYWHERE IN YOUR SCRIPT###
 ################
 ###Scene One Dialogue:
 
@@ -93,9 +93,9 @@
 
 
 
-
 #s1_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
 # (e.g. "noun", "verb", "adjective")
+###DO NOT USE LINE BREAKS/HIT THE RETURN KEY ANYWHERE IN YOUR SCRIPT###
 ################
 ###Scene Two Dialogue:
 
@@ -104,9 +104,9 @@
 
 
 
-
 #s2_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
 # (e.g. "noun", "verb", "adjective")
+###DO NOT USE LINE BREAKS/HIT THE RETURN KEY ANYWHERE IN YOUR SCRIPT###
 ################
 ###Scene Three Dialogue:
 
@@ -114,9 +114,9 @@
 
 
 
-
 #s3_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
 # (e.g. "noun", "verb", "adjective")
+###DO NOT USE LINE BREAKS/HIT THE RETURN KEY ANYWHERE IN YOUR SCRIPT###
 ################
 ##################
 
@@ -129,7 +129,7 @@
 
 ### STEP TWO ###
 # Copy-and-Paste your script's name over the ENTER-SCRIPT-NAME-HERE placeholder below
-# hint: don't copy over the quotation marks surrounding the placeholder
+# Hint: don't copy over the quotation marks surrounding the placeholder
 
 @script = Script.create!(name: "ENTER-SCRIPT-NAME-HERE", genre: @alien_genre)
 
@@ -138,7 +138,7 @@
 ### STEP THREE ###
 # Copy-and-Paste your scene text over each corrsponding ENTER-SCENE-#-DIALOGUE-HERE placeholders below
 # Hint: The scene '#' tells you which scene's dialogue to use for that placeholder
-# hint_two: don't copy over the quotation marks surrounding the placeholder
+# Hint_two: don't copy over the quotation marks surrounding the placeholder
 
 
 @scene_one = Scene.create!(script: @script, script_position: 1, dialogue: "ENTER-SCENE-ONE-DIALOGUE-HERE")
@@ -157,7 +157,7 @@ WordBlank.create(scene: @scene_one, scene_position: 0, word_type: "caption")
 ## DON'T YOU FUCKING DARE FUCK WITH THE FUCKING CAPTION WORDBLANK CREATION LISTED ABOVE!!! ##
 
 
-# ...did you leave it^^^ alone???...ARE YOU SURE?????...Good job, you maybe proceed to step five
+# ...did you leave it^^^ alone???...ARE YOU SURE?????...Good job, you may proceed to step five
 
 
 
@@ -200,6 +200,11 @@ end
 ##########END OF SCRIPT NUMBER __number__ !!!!!##########
 #################################################
 
+
+### NOTE: for the upcoming directions in Steps Six and Seven, the lines specified will only be correct if you DID NOT USE LINE BREAKS IN YOUR SCRIPT ##
+### otherwise -
+###   line 126 is supposed to be the center of your "START OF SCRIPT NUMBER __ number__" box
+###   line 200 is supposed to be the center your "END OF SCRIPT NUMBER __number__" box
 
 
 ### STEP SIX ###
