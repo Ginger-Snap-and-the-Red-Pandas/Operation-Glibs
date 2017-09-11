@@ -36,7 +36,7 @@
 
 ### HOW TO WRITE A SCRIPT ###
 
-# STEP ONE:
+### STEP ONE ###
 #   Write your script_title, followed by the script dialogue for each scene below.
 
 #   NOTE_ONE: Anytime you write a glib in the dialogue, (i.e. '*word' ), add that glib's word type into the Glib_Word_Types array for that scene.
@@ -87,48 +87,49 @@
 ################
 ################
 
-# STEP TWO:
+
+
+
+####Ignore the next three lines for now, proceed to STEP TWO
+#################################################
+##########START OF SCRIPT NUMBER __number__ !!!!!##########
+#################################################
+
+
+### STEP TWO ###
 # Copy-and-Paste your script's name over the ENTER-SCRIPT-NAME-HERE placeholder below
+# hint: don't copy over the quotation marks surrounding the placeholder
 
 @script = Script.create!(name: "ENTER-SCRIPT-NAME-HERE", genre: @alien_genre)
 
 
-# STEP THREE:
-#  Copy-and-Paste the following new-script comment text into the bottom of the seed file. (The bottom is where all the code ends.)
 
+### STEP THREE ###
+# Copy-and-Paste your scene text over each corrsponding the ENTER-SCENE-#-DIALOGUE-HERE placeholders below
+# Hint: The scene '#' tells you which scene's dialogue to use for that placeholder
+# hint_two: don't copy over the quotation marks surrounding the placeholder
 
-
-#####START OF NEW SCRIPT!!!!!#####
-
-
-
-# STEP FOUR:
-# Copy-and-Paste your scene text into each of the Scene.create!s's dialogue sections over the ENTER-SCENE-#-DIALOGUE-HERE placeholders below
 
 @scene_one = Scene.create!(script: @script, script_position: 1, dialogue: "ENTER-SCENE-ONE-DIALOGUE-HERE")
-@scene_two = Scene.new(script: @script, script_position: 2, dialogue:"ENTER-SCENE-TWO-DIALOGUE-HERE")
-@scene_three = Scene.new(script: @script, script_position: 3, dialogue:"ENTER-SCENE-THREE-DIALOGUE-HERE")
-
-# STEP FOUR-AND-A-HALF
-# Copy-and-paste the preceeding scene_creation_code into the bottom of the seed file.
+@scene_two = Scene.create!(script: @script, script_position: 2, dialogue:"ENTER-SCENE-TWO-DIALOGUE-HERE")
+@scene_three = Scene.create!(script: @script, script_position: 3, dialogue:"ENTER-SCENE-THREE-DIALOGUE-HERE")
 
 
-# STEP FIVE:
-# Don't fuck with the caption wordBlank creation below
+### STEP FOUR ###
+# DON'T YOU FUCKING DARE FUCK WITH THE FUCKING CAPTION WORDBLANK CREATION LISTED BELOW!!! #
 
 WordBlank.create(scene: @scene_one, scene_position: 0, word_type: "caption")
 
-# STEP FIVE-AND-A-HALF
-# Copy-and-paste the preceeding wordblank_creation_code into the bottom of the seed file.
+# ...did you leave it^ alone???...ARE YOU SURE?????...Good job, go on to step six
 
 
-# STEP SIX:
+
+### STEP FIVE ###
 # Remember your s1, s2, and s3 glib_word_types from earlier? Copy-and-Paste those arrays over the corresponding [ ENTER-GLIB-TYPES-HERE ] arrays below
-# (Yes, copy it over the array itself, not just the text inside of it)
-# NOTE FOR DILLON: Ignore the code, ignore the loops, just follow the tutorial directions
+# (Yes, copy it over the array itself, not just the text inside of the array)
+# NOTE FOR DILLON: Ignore the code, ignore the loops, just follow these tutorial directions
 
 
-["noun", "noun", "adjective", "noun", "verb", "adjective"]
 
 ## s1 (scene_one) here:
 
@@ -160,28 +161,43 @@ s1_glib_word_types.each do |word_type|
 end
 
 
-
-# STEP SIX-AND-A-HALF
-# Copy-and-paste the preceeding s1, s2, and s3 glib_word_types creation code into the bottom of the seed file
-
-
-
-# STEP SEVEN
-# Copy-and-paste the following end-of-script comment into the bottom of the seed file:
-
-
-#####END OF NEW SCRIPT!!!!!#####
+#################################################
+##########END OF SCRIPT NUMBER __number__ !!!!!##########
+#################################################
 
 
 
-#STEP EIGHT
-# Alright - this the hardest part.
-# a) Copy and paste the following comment text into the bottom of the seed file
+### STEP SIX ###
+# Alright - this is the hardest part.
 
-######Script Number: *script_number#####
+# 1) Look at the script number listed at the bottom of the seed.rb file
+### hint: That script's number should be an integer
+# 2) Take that integer and add '1' to it. Remember the new integer you've just created
+# 3) On lines 165 and 95, replace the placemarker '__number__' with your new integer
 
-# b) Check the script number for the preceeding script in the seed file. Your script's script number should be that integer += 1
-# c) That means writing the +1 integer over '*script_number'
+### Question: Why step number eight?
+###### Answer: As more scripts appear in our seed file, the harder it will become to navigate between all the different scripts in the database. Therefore, we are indexing them in the seed for ease of access/reading
 
 
+
+### STEP SEVEN ###
+
+# Cool, seven's a great number.
+# Now comes the fun part - you will:
+
+# 1) Delete all comment lines from lines 100 onward inside of this script file, all the way up to the end of this document.
+# HINT: A comment line is any line that start with one or more '#'
+# HINT_TWO: You might want to delete these step seven instructions AFTER reading the following three steps
+
+# 2) Copy-and-Paste lines 94-until-the-end-of-this-document into the bottom of the seed.rb file
+# Hint: Line 94 starts the block where you see Start-Of-Script-Number-(number)
+
+# 3) Profit!
+
+# 4) Check that you deleted the step seven comments so they're not copied into the seed file, right??? Cool??? cool
+
+
+
+###################################
 ##### YOU DID IT!!!! GOOD JOB #####
+###################################
