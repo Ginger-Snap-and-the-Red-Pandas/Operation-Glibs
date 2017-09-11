@@ -13,6 +13,8 @@
 
 # Step One: Write your sample script inside of the scripts.rb file...trust us, that will make this shit easier moving forward.
 # .....fill this once we know
+
+
 Story.destroy_all
 Script.destroy_all
 GeneratedWord.destroy_all
@@ -23,6 +25,11 @@ WordBlank.destroy_all
 
 @alien_genre = Genre.create!(genre_name: "Alien")
 @script = Script.create!(name: "Test Script", genre: @alien_genre)
+
+
+#################################################
+########## START OF SCRIPT NUMBER 1 !!!!!########
+#################################################
 
 @scene_one = Scene.create!(script: @script, script_position: 1, dialogue: "On my most recent exploration mission of planet Terra, I learned about something called...*title.
 The first thing I encountered was *caption.
@@ -55,24 +62,9 @@ WordBlank.create(scene: @scene_three, scene_position: 3, word_type: "verb")
 WordBlank.create(scene: @scene_three, scene_position: 4, word_type: "noun")
 
 
-
-
-
-
-# "I saw a #{@scene.word_blanks[0]}"
-
-# @scene = final_draft(scene)
-
-
-# word_blanks[0].generated_words.where(story: @story)
-
-
-# "I saw a <%=@story.word_blanks[0].generated_words.where(story: @story)%>"
-
-
-
-# "I saw a #{@scene.word_blanks[0]}"
-
+#################################################
+########## END OF SCRIPT NUMBER 1 !!!!!##########
+#################################################
 
 
 
