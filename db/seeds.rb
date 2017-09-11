@@ -13,6 +13,8 @@
 
 # Step One: Write your sample script inside of the scripts.rb file...trust us, that will make this shit easier moving forward.
 # .....fill this once we know
+
+
 Story.destroy_all
 Script.destroy_all
 GeneratedWord.destroy_all
@@ -22,57 +24,10 @@ Scene.destroy_all
 WordBlank.destroy_all
 
 @alien_genre = Genre.create!(genre_name: "Alien")
-@script = Script.create!(name: "Test Script", genre: @alien_genre)
-
-@scene_one = Scene.create!(script: @script, script_position: 1, dialogue: "On my most recent exploration mission of planet Terra, I learned about something called...*title.
-The first thing I encountered was *caption.
-It appears that these things called *word enjoy *word into and around *word.
-A *word detected me, so I escaped a *word and changed position.")
-@scene_two = Scene.create!(script: @script, script_position: 2, dialogue:"Next, my Terra-nalyzer detected *caption.
-It appears that *word like *word *word.")
-@scene_three = Scene.create!(script: @script, script_position: 3, dialogue: "Finally, the Gleep Glops back at the lab were excited to learn
-that, when a *word sees a *word, *word occurs on all the *word.
-Who would have guessed that *caption would provide so much data?!?
-That concludes my presentation of *title.  Questions?")
 
 
-WordBlank.create(scene: @scene_one, scene_position: 0, word_type: "caption")
-WordBlank.create(scene: @scene_one, scene_position: 1, word_type: "noun")
-WordBlank.create(scene: @scene_one, scene_position: 2, word_type: "verb")
-WordBlank.create(scene: @scene_one, scene_position: 3, word_type: "noun")
-WordBlank.create(scene: @scene_one, scene_position: 4, word_type: "noun")
-WordBlank.create(scene: @scene_one, scene_position: 5, word_type: "noun")
-
-WordBlank.create(scene: @scene_two, scene_position: 0, word_type: "caption")
-WordBlank.create(scene: @scene_two, scene_position: 1, word_type: "noun")
-WordBlank.create(scene: @scene_two, scene_position: 2, word_type: "verb")
-WordBlank.create(scene: @scene_two, scene_position: 3, word_type: "noun")
-
-WordBlank.create(scene: @scene_three, scene_position: 0, word_type: "caption")
-WordBlank.create(scene: @scene_three, scene_position: 1, word_type: "noun")
-WordBlank.create(scene: @scene_three, scene_position: 2, word_type: "noun")
-WordBlank.create(scene: @scene_three, scene_position: 3, word_type: "verb")
-WordBlank.create(scene: @scene_three, scene_position: 4, word_type: "noun")
-
-
-
-
-
-
-# "I saw a #{@scene.word_blanks[0]}"
-
-# @scene = final_draft(scene)
-
-
-# word_blanks[0].generated_words.where(story: @story)
-
-
-# "I saw a <%=@story.word_blanks[0].generated_words.where(story: @story)%>"
-
-
-
-# "I saw a #{@scene.word_blanks[0]}"
-
+project_root = Dir.pwd
+Dir.glob(project_root + '/db/glibs_scripts/*') {|file| require file}
 
 
 
