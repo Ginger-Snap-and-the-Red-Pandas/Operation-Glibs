@@ -50,6 +50,7 @@
 ###Script Title:
 
 
+
 ################
 ###Scene One Dialogue:
 
@@ -58,8 +59,10 @@
 
 
 
+
+
 #s1_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
-# (e.g. "noun", "verb", "adjective"):
+# (e.g. "noun", "verb", "adjective")
 ################
 ###Scene Two Dialogue:
 
@@ -82,10 +85,7 @@
 #s3_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
 #m(e.g. "noun", "verb", "adjective")
 ################
-
-
-
-
+################
 
 # STEP TWO:
 # Copy-and-Paste your script's name over the ENTER-SCRIPT-NAME-HERE placeholder below
