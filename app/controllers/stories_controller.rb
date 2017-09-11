@@ -43,6 +43,9 @@ class StoriesController < ApplicationController
       @script_scenes_dialogues = blank_glibs_for_script_show(@script)
       render 'scripts/show'
     end
+
+
+#
   end
 
 
