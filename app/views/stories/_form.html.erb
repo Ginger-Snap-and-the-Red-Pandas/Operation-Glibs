@@ -1,3 +1,8 @@
+<h1>Please Help Us Complete Our Story:</h1>
+<% if @error %>
+  <p> <%= @error %> </p>
+<% end %>
+
 <%= form_with(model: @story, local: true) do |form| %>
   <% if @story.errors.any? %>
     <div id="error_explanation">
