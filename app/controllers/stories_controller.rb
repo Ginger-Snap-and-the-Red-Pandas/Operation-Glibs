@@ -20,33 +20,24 @@ class StoriesController < ApplicationController
     @story.genre = @genre
     @story.script = @script
 
+
     #Save that story!...finally, so nice
     if @story.save
 
       @photo_urls = [picture_params[:url1], picture_params[:url2], picture_params[:url3]]
       @photos = create_story_pictures(@story, @scenes, @photo_urls)
 
+      labeled_tags = josh_api_screwup(@photos)
 
-      #analyze our photos
-      labeled_tags = []
-      josh = 1
-      josh_error = ""
-      @error = nil
-      @photos.each do |photo|
-        photo_details = AnalyzableHelper.picling(photo.url)
-        if photo_details.is_a? String
-          josh_error << josh.to_s + " "
-          @error = "Photo(s) # #{josh_error}may be too large...or the contractors MS sent us to process photos are on break and you should try again. See if your photo is larger than 4mb, otherwise try again...or give up. Whatever -Your Friends at Team GLIBS"
-        end
-        labeled_tags << photo_details
-        josh += 1
-      end
 
-      if @error
+      if labeled_tags.is_a? String
         @story.destroy
         @story = Story.new
         return render 'new'
       end
+
+
+
 
       ### Generate the glibs for all of our scenes!!!
       #Gabe: Trust us, this works. Don't worry about the man behind the curtain.
