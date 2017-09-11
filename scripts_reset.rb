@@ -1,4 +1,7 @@
-#####BEFORE YOU BEGIN!!!#####
+###############################
+##### BEFORE YOU BEGIN!!! #####
+###############################
+
 ## Follow these steps:
 # 1) Go to 'scripts_reset.rb'
 # 2) Command-A (select all)
@@ -8,44 +11,75 @@
 # 6) Command-V (paste)
 #### You have now reset to an empty canvas in scripts.rb to write your
 # (un)doubtedly brilliant prose!
-# ...unless you're bad at following directions. The Glibs Team isn't sure how to make them more-idiot-proof ...you've also disappointed Ginger. Way to go champ, think on that.
+
+## ...unless you're bad at following directions. The Glibs Team isn't sure how to make them more-idiot-proof ...you've also disappointed Ginger. Way to go champ, think on that.
 
 
-#####I WANT TO WRITE A SCRIPT!#####
-# Good job, you made it this far. Our idiot-proof technology appears to be working, unless you skipped the previous steps. Go back, do it again, do it right!
+#####################################
+##### I WANT TO WRITE A SCRIPT! #####
+#####################################
+
+## Cool, happy to see your enthusiasm.
+## And good job on making it this far.
+## Our idiot-proof technology appears to be working, unless you skipped the previous steps listed in "BEFORE YOU BEGIN". If you haven't followed them - Go back, do it again, do it right!
+
+###############################
+######## WHAT IS THIS? ########
+##### (AKA "DIRECTIONS") ######
+###############################
+
+## Really...you're asking that now? Flying by the seat of your pants we see. The GLIBS Team approves.
+
+## You'll use this file to write a sample script.
+## By following these directions, you should end up with the proper syntax
+## Finally, you'll move that script into the seed file.
+## Don't worry - the directions below will tell you exactly what to copy and paste into the seeds.rb file
+## After all, what could possibly go wrong?
+
+## (Other than you screwing up our seed file, thereby placing by data inside our database...)
+## (...which then takes us hours to repair because you couldn't follow these complicated 'easy' directions...)
+## (...after which a child cries, because they're perfect story pops out awful narrative)
+## (...thereby turning off the up-and-coming-next-once-in-a-lifetime-brilliant-photographer from even beginning a career in photography)
+
+## Yeah, other than that whole thing ^ - what could possibly go wrong?
 
 
-#####WHAT IS THIS? (AKA DIRECTIONS)#####
 
-# Really...you're asking that now? Flying by the seat of your pants we see. The GLIBS Team approves.
+#######################
+##### CHEAT SHEET #####
+#######################
 
-# Use this file to write a sample script. Then, move it to the seed file once it's written with the proper syntax
+##The following are glibs placeholders, which are used to later insert random words into your scene dialogue for the adoring masses ##
 
-
-###CHEAT SHEET###
-
-##These are Glibs placeholders, to insert into your scene dialogue##
-
-# *title -> the user's inputted story name
-# *caption -> the scene's photo caption
-# *word -> any glibbed word (i.e. generated noun, verb, or adjective)
+# *title    -> the user's inputted story name
+# *caption  -> the scene_photo's caption (i.e. a descriptive sentence about the picture chosen)
+# *word     -> any randomly glibbed word (i.e. generated noun, verb, or adjective)
 
 # Example Sentences with Glibs:
-###"The other day I experience a *caption. It involved a *word inside of the *word. I decided to name it *title."
+###"The other day I witnessed a *caption. It involved a *word inside of the *word. I decided to name it *title."
 
 
-### HOW TO WRITE A SCRIPT ###
+#################################
+##### HOW TO WRITE A SCRIPT #####
+#################################
+
 
 ### STEP ONE ###
-#   Write your script_title, followed by the script dialogue for each scene below.
+#   Write your script_title, followed by the script dialogue for each of the scenes listed below it.
+##  Please don't use the enter button/line breaks while writing dialogue.
+##  Each scene should consist of 2-to-4 sentences in length.
+#
+#
+#   IMPORTANT_NOTE:
+##    Anytime you write a glib in the dialogue, (i.e. '*word' ), add that glib's word type into the  Glib_Word_Types array for that scene.
+#
+# You're glib_word_types should ultimately end up looking something like this -
+# ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
+#
+#
+#   LESS_IMPORTANT_NOTE: Expect all verbs in your story to end in the suffix "-ing", because that's what the photo API returns
 
-#   NOTE_ONE: Anytime you write a glib in the dialogue, (i.e. '*word' ), add that glib's word type into the Glib_Word_Types array for that scene.
-# =>   You're Glib_Word_Types should end up looking like this:
-### => Ex: ["noun", "noun", "adjective", "noun", "verb", "adjective"]
-
-#   NOTE_TWO: Expect all verbs in your story to end in the suffix "-ing", because that's what the photo API returns
-
-
+##################
 ################
 ###Script Title:
 
@@ -53,7 +87,6 @@
 
 ################
 ###Scene One Dialogue:
-
 
 
 
@@ -85,12 +118,10 @@
 #s3_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
 #m(e.g. "noun", "verb", "adjective")
 ################
-################
+##################
 
+#####Ignore the next three comment lines for now, proceed to STEP TWO#####
 
-
-
-####Ignore the next three lines for now, proceed to STEP TWO
 #################################################
 ##########START OF SCRIPT NUMBER __number__ !!!!!##########
 #################################################
@@ -116,11 +147,17 @@
 
 
 ### STEP FOUR ###
-# DON'T YOU FUCKING DARE FUCK WITH THE FUCKING CAPTION WORDBLANK CREATION LISTED BELOW!!! #
+# Do nothing - skip ahead to STEP FIVE
+# Seriously, leave the following WordBlank alone...seriously
+
+## DON'T YOU FUCKING DARE FUCK WITH THE FUCKING CAPTION WORDBLANK CREATION LISTED BELOW!!! ##
 
 WordBlank.create(scene: @scene_one, scene_position: 0, word_type: "caption")
 
-# ...did you leave it^ alone???...ARE YOU SURE?????...Good job, go on to step six
+## DON'T YOU FUCKING DARE FUCK WITH THE FUCKING CAPTION WORDBLANK CREATION LISTED ABOVE!!! ##
+
+
+# ...did you leave it^^^ alone???...ARE YOU SURE?????...Good job, you maybe proceed to step five
 
 
 
@@ -128,7 +165,6 @@ WordBlank.create(scene: @scene_one, scene_position: 0, word_type: "caption")
 # Remember your s1, s2, and s3 glib_word_types from earlier? Copy-and-Paste those arrays over the corresponding [ ENTER-GLIB-TYPES-HERE ] arrays below
 # (Yes, copy it over the array itself, not just the text inside of the array)
 # NOTE FOR DILLON: Ignore the code, ignore the loops, just follow these tutorial directions
-
 
 
 ## s1 (scene_one) here:
@@ -160,7 +196,6 @@ s1_glib_word_types.each do |word_type|
   i += 1
 end
 
-
 #################################################
 ##########END OF SCRIPT NUMBER __number__ !!!!!##########
 #################################################
@@ -168,15 +203,21 @@ end
 
 
 ### STEP SIX ###
-# Alright - this is the hardest part.
 
+# Alright - now comes the hardest part
+#
 # 1) Look at the script number listed at the bottom of the seed.rb file
 ### hint: That script's number should be an integer
-# 2) Take that integer and add '1' to it. Remember the new integer you've just created
-# 3) On lines 165 and 95, replace the placemarker '__number__' with your new integer
-
-### Question: Why step number eight?
-###### Answer: As more scripts appear in our seed file, the harder it will become to navigate between all the different scripts in the database. Therefore, we are indexing them in the seed for ease of access/reading
+# 2) Take that integer and add '1' to it. Remember this new integer you've just created
+# 3) On lines 200 and 126 of THIS FILE, (YES, THE ONE IN WHICH YOU ARE READING THESE DIRECTIONS) - replace the placeholder, '__number__', with your fancy new integer
+#
+# 4) Compare the numbers you just typed into lines 200 and 126 of THIS script file:
+#    - They should be the same number.
+#    - If they're not the same number, repeat STEP SIX again
+#
+#
+### Question: Why step number six?
+###### Answer: As more and more scripts inexorably appear in our seed file, it will become progressively harder to navigate between all the different scripts in the database. Therefore, we are indexing the scripts inside the seed file for ease of access/reading
 
 
 
@@ -185,12 +226,15 @@ end
 # Cool, seven's a great number.
 # Now comes the fun part - you will:
 
-# 1) Delete all comment lines from lines 100 onward inside of this script file, all the way up to the end of this document.
-# HINT: A comment line is any line that start with one or more '#'
-# HINT_TWO: You might want to delete these step seven instructions AFTER reading the following three steps
+# 1) Delete all of the directions from lines 125 onward inside of this file (scripts.rb), all the way through the end of this document.
+#   DO NOT delete the "START-OF-SCRIPT" or "END-OF-SCRIPT" boxes
 
-# 2) Copy-and-Paste lines 94-until-the-end-of-this-document into the bottom of the seed.rb file
-# Hint: Line 94 starts the block where you see Start-Of-Script-Number-(number)
+# HINT_ONE: Direction lines all start with one or more '#'
+# HINT_TWO: DO NOT DELETE un-commented lines (i.e. lines that DO NOT begin with '#')
+# HINT_THREE: You may want to delete the STEP SEVEN comment text AFTER reading the remainder of these instructions
+
+# 2) Copy-and-Paste lines 125-until-the-end-of-this-document into the bottom of the seed.rb file
+# Hint: Line 125 is the start of the block where you see Start-Of-Script-Number-(number)
 
 # 3) Profit!
 
