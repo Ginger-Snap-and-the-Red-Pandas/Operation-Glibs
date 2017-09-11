@@ -100,7 +100,7 @@ s1_glib_word_types = [ "noun" ]
 ################
 ################
 ###Scene Two Dialogue (Write it inside the quotation marks):
-scene_two_dialogue = " The *word *word *word up to a *caption. I screamed! "
+scene_two_dialogue = " The *word quickly *word up to a *caption. I screamed! "
 
 
 
@@ -171,6 +171,7 @@ s1_glib_word_types.each do |word_type|
   i += 1
 end
 
+WordBlank.create(scene: scene_two, scene_position: 0, word_type: "caption")
 
 i = 1
 s2_glib_word_types.each do |word_type|
@@ -178,6 +179,7 @@ s2_glib_word_types.each do |word_type|
   i += 1
 end
 
+WordBlank.create(scene: scene_three, scene_position: 0, word_type: "caption")
 
 i = 1
 s3_glib_word_types.each do |word_type|

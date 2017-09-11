@@ -6,6 +6,8 @@ class StoriesController < ApplicationController
   # end
 
   def create
+    p "88" * 88
+    p @story
     @story = Story.new(story_params)
     @genre = Genre.first
     @script = @genre.scripts.sample
