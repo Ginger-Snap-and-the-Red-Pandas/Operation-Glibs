@@ -15,6 +15,20 @@ module GlibsHelper
     end
   end
 
+
+  def blank_glibs_for_script_show(script)
+    script_scenes_dialogues = script.scene_dialogues
+    script_scenes_dialogues.each do |scene_dialogue|
+      scene_dialogue.sub!("*title", " your-story-title ")
+      scene_dialogue.sub!("*caption", " photo-description-sentence ")
+      scene_dialogue.gsub!("*word", " _____ ")
+    end
+    script_scenes_dialogues
+  end
+
+
+  private
+
   def adjective_labels
     ['JJ', 'JJR', 'JJS']
   end
