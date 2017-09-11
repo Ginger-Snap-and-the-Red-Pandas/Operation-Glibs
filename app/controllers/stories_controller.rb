@@ -33,11 +33,13 @@ class StoriesController < ApplicationController
       #analyze our photos
       labeled_tags = []
       josh = 1
+      josh_error = ""
       @error = nil
       @photos.each do |photo|
         photo_details = AnalyzableHelper.picling(photo.url)
         if photo_details.is_a? String
-          @error = "Photo # #{josh} is too large. Or the contractors MS sent us to process photos are on break and you should try again. See if your photo is larger than 4mb, otherwise try again...or give up. Whatever -Your Friends at Team GLIBS"
+          josh_error << josh.to_s + " "
+          @error = "Photo(s) # #{josh_error}may be too large...or the contractors MS sent us to process photos are on break and you should try again. See if your photo is larger than 4mb, otherwise try again...or give up. Whatever -Your Friends at Team GLIBS"
         end
         labeled_tags << photo_details
         josh += 1
