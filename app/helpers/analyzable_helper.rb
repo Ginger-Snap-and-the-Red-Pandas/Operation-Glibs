@@ -5,6 +5,10 @@ module AnalyzableHelper
 
   def self.picling(user_url)
       pic_data_set = self.pic_call(user_url)
+      #Refactor lines 9 and 10 if possible
+      if pic_data_set.is_a? String
+        return pic_data_set
+      end
       pulled_tags = pic_data_set[0]
       pulled_caption = pic_data_set[1]
       pulled_POS = self.ling_call(pulled_tags)
@@ -38,6 +42,11 @@ private
 
     # puts response.body
     photo_data = JSON.parse(response.body)
+    if photo_data["description"] == nil
+      @error = "Error, going back to the top-side to tell everyone about it!!!"
+      return @error
+    end
+
     tags = photo_data["description"]["tags"]
     caption = photo_data["description"]["captions"][0]["text"]
     all_pic_data = [tags, caption]

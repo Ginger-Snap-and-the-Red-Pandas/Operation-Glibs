@@ -27,18 +27,28 @@ class StoriesController < ApplicationController
       @picture_two = Picture.create(story: @story, scene: @scenes[1], url: picture_params[:url2])
       @picture_three = Picture.create(story: @story, scene: @scenes[2], url: picture_params[:url3])
 
-      p "88" * 88
-        p picture_params[:url2]
-        p picture_params[:url3]
-
-      p "88" * 88
       @photos = [@picture_one, @picture_two, @picture_three]
 
 
       #analyze our photos
       labeled_tags = []
+      josh = 1
+      josh_error = ""
+      @error = nil
       @photos.each do |photo|
-        labeled_tags << AnalyzableHelper.picling(photo.url)
+        photo_details = AnalyzableHelper.picling(photo.url)
+        if photo_details.is_a? String
+          josh_error << josh.to_s + " "
+          @error = "Photo(s) # #{josh_error}may be too large...or the contractors MS sent us to process photos are on break and you should try again. See if your photo is larger than 4mb, otherwise try again...or give up. Whatever -Your Friends at Team GLIBS"
+        end
+        labeled_tags << photo_details
+        josh += 1
+      end
+
+      if @error
+        @story.destroy
+        @story = Story.new
+        return render 'new'
       end
 
       ### Generate the glibs for all of our scenes!!!
@@ -46,13 +56,9 @@ class StoriesController < ApplicationController
       #Dillon: "It might work, let's see"
       @scenes.length.times do |i|
         @word_blanks = @scenes[i].word_blanks
-        # p "8" * 888
         photo_caption = labeled_tags[i][0]
         labeled_photo_words = labeled_tags[i][1]
-        # p "8" * 888
-        # p @word_blanks.class
         @word_blanks = @word_blanks.to_ary
-
         @caption_blank = @word_blanks.shift
           #Keep this before generate_glibs in calls, this stores the photos description as the FIRST generated_word for a scene
         store_scene_caption(photo_caption, @caption_blank, @story)
