@@ -1,8 +1,5 @@
 /*holds all elements for story*/
-#show-page {
-  margin: auto;
-  width: 50%;
-}
+
 
 #story-container {
   position: relative;
@@ -13,21 +10,27 @@
 
 /*user photo*/
 .scene-image {
-   position: relative;
-  top: 0;
-  left: 0;
-  height: 720px;
-  max-width: 720px;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90%;
+  margin: 20px auto;
+
 
 }
 
 .curtain {
-  position: absolute;
-  top: 0;
-  left: 0;
+
+   display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90%;
+  margin: 20px auto;
 }
 
-#character {
+/*#character {
   position: absolute;
   left: 10px;
   bottom: 20px;
@@ -40,11 +43,11 @@
 @keyframes play {
    100% { background-position: -1280px; }
 }
+*/
 
 
 
-
-.bubble-wrap {
+/*.bubble-wrap {
   position: absolute;
   left: 300px;
   bottom: 20px;
@@ -62,7 +65,7 @@
   line-height: 1.25em;
   z-index: 1;
 }
-
+*/
 .bubble:after {
   content: '';
   position: absolute;
@@ -91,14 +94,4 @@
   margin-top: -16px;
 }
 
-#new-glib {
-  width: 100%;
-}
 
-#next-button {
-  float: right;
-}
-
-#previous-button {
-  float: left;
-}
