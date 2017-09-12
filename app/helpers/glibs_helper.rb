@@ -45,33 +45,47 @@ module GlibsHelper
 
   private
 
+#JJ
   def adjective_labels
     ['JJ', 'JJR', 'JJS']
   end
 
-  def noun_labels
-    ['NN', 'NNP', 'NNPS', 'NNS']
+  def singular_noun_labels
+    ['NN', 'NNP']
+  end
+
+  def plural_noun_labels
+    ["NNS", 'NNPS']
   end
 
   def present_verb_labels
     ['VBG']
   end
 
+# other_verbs = ['VB', 'VBD', 'VBN', 'VBZ', 'VBP']
+
+
   def categorize_words(labeled_words)
-    nouns_array = []
+    singular_nouns_array = []
+    plural_nouns_array = []
     verbs_array = []
     adjectives_array = []
     labeled_words.each do |word, type|
-      nouns_array << word if noun_labels.include?(type)
+      singular_nouns_array << word if singular_noun_labels.include?(type)
+      plural_nouns_array << word if plural_noun_labels.include?(type)
       verbs_array << word if present_verb_labels.include?(type)
       adjectives_array << word if adjective_labels.include?(type)
+    end
+    if plural_nouns_array.empty?
+      plural_nouns_array = singular_nouns_array.map{|noun| noun + 's'}
     end
     hash_arrays(nouns_array, verbs_array, adjectives_array)
   end
 
   def hash_arrays(nouns, verbs, adjectives)
     labeled = {}
-    labeled["noun"] = nouns
+    labeled["singular noun"] = nouns
+    labeled["plural noun"] = nouns
     labeled["verb"] = verbs
     labeled["adjective"] = adjectives
     labeled
@@ -89,6 +103,5 @@ module GlibsHelper
     adjectives.sample
   end
 
-# other_verbs = ['VB', 'VBD', 'VBN', 'VBZ', 'VBP']
 
 end
