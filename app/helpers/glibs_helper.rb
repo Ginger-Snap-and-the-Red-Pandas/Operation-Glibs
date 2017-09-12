@@ -121,15 +121,15 @@ module GlibsHelper
 
 
   def random_singular_nouns
-
+    ["glib", "tire iron", "hot dog", "digney", "penguin", "watermelon", "Barney the Dinosaur", "dinosaur"]
   end
 
   def random_verbs
-
+    ["glibing", "eating", "jumping", "smashing", "running", "crying", "playing", "hopping"]
   end
 
   def random_adjectives
-
+    ["glibby", "purple", "red", "quick", "slow", "tall", "skinny", "chubbs", "scrawny"]
   end
 
 
