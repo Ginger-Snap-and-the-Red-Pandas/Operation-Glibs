@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   end
   resources :stories, only: [:show] do
     resources :scenes, only: [:show]
+      get '/end' => 'scenes#end'
     # resources :pictures, only: [:create]
     # resources :generated_words, only: [:create]
+
   end
 
   root 'genres#index'

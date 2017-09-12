@@ -1,0 +1,28 @@
+<div id="show-page">
+
+  <div id="story-container">
+
+          <div class="story-link">
+          <em><strong>glibs.herokuapp.com/stories/<%=@story.id%></strong></em> <br><br>
+           <%= link_to "Make More Glibs", root_path %>
+        </div>
+    <%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
+    <div id="character"></div>
+      <div class="bubble-wrap">
+       <div class="bubble">
+         <div id="new-glib">
+        <p >If you would like to share this story copy the link below: <br>
+        </p>
+    </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="buttons-container">
+
+ <a href="<%= story_scene_path(@story, @story.scenes.last)%>", id= 'previous-button'></a>
+
+
+
+</div>
+
