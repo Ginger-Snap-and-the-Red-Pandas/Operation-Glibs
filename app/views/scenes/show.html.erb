@@ -14,11 +14,12 @@
 
   <div id="buttons-container">
       <% if @scene != @scenes.first %><br>
-        <%= link_to "Previous", story_scene_path(@story, @previous_scene), id: 'previous-button' %>
+        <a href="<%= story_scene_path(@story, @previous_scene)%>", id= 'previous-button'></a>
       <% end %>
 
       <% if @scene != @scenes.last %>
-        <%= link_to "Next", story_scene_path(@story, @next_scene), id: 'next-button' %>
+      <a href="<%= story_scene_path(@story, @next_scene)%>", id= 'next-button'></a>
+
       <% end %>
 
   <div id="new-glib">
