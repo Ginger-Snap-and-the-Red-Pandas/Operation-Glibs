@@ -37,20 +37,16 @@ class StoriesController < ApplicationController
       end
 
 
-      @image_files = [@photo1.image.url]#, @photo2.image.url, @photo3.image.url]
-      # @photos = create_story_pictures(@story, @scenes, @image_files)
-
       # Tells us if Josh, the user, or MS screwed up the api call
-      @photos = [@photo1]
       labeled_tags = josh_api_screwup(@photos)
 
-      # If Josh screwed up, explains the issue to the user and re-renders form
-      # if labeled_tags.is_a? String
-      #   @story.destroy
-      #   @story = Story.new
-      #   @script_scenes_dialogues = blank_glibs_for_script_show(@script)
-      #   return render 'scripts/show'
-      # end
+      #If Josh screwed up, explains the issue to the user and re-renders form
+      if labeled_tags.is_a? String
+        @story.destroy
+        @story = Story.new
+        @script_scenes_dialogues = blank_glibs_for_script_show(@script)
+        return render 'scripts/show'
+      end
 
       ### Generate the glibs for all of our scenes!!!
       #Gabe: Trust us, this works. Don't worry about the man behind the curtain.
