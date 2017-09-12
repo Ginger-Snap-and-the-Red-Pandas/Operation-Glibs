@@ -20,6 +20,11 @@ module StoryCreationHelper
       josh = 1
       josh_error = ""
       photos.each do |photo|
+        # p "This is your url" * 10
+        # p photo.url
+        # photo_url = photo.url.insert(4, "s")
+        # p "Part two"
+        # p photo_url
         photo_details = AnalyzableHelper.picling(photo.url)
         if photo_details.is_a? String
           josh_error << josh.to_s + " "
