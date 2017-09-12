@@ -6,9 +6,10 @@ class StoriesController < ApplicationController
   # end
 
   def create
+
     @story = Story.new(story_params)
-    @genre = Genre.first
-    @script = @genre.scripts.sample
+    @genre = Genre.find(params[:genre_id])
+    @script = Script.find(params[:script_id])
     @scenes = @script.scenes
 
     #Assign story attributes, so the story can be saved
@@ -42,6 +43,9 @@ class StoriesController < ApplicationController
       @script_scenes_dialogues = blank_glibs_for_script_show(@script)
       render 'scripts/show'
     end
+
+
+#
   end
 
 
