@@ -21,7 +21,7 @@ class StoriesController < ApplicationController
     p params
     if @story.save
       p "$%" * 45
-      @photo1 = Picture.new(picture_params[:image1])
+      @photo1 = Picture.new(picture_params)
       @photo1.story=@story
       @photo1.scene=@scenes[0]
             p "$^&" * 45
