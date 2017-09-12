@@ -11,6 +11,8 @@ module GlibsHelper
     categorized_words = categorize_words(photo_libs)
     word_blanks.each do |word_blank|
       samples = categorized_words[word_blank.word_type]
+      p "SAMPLE" * 88
+      p samples
       GeneratedWord.create!(word: samples.sample, story: story, word_blank: word_blank)
     end
   end
@@ -76,20 +78,34 @@ module GlibsHelper
       verbs_array << word if present_verb_labels.include?(type)
       adjectives_array << word if adjective_labels.include?(type)
     end
-    if plural_nouns_array.empty?
-      plural_nouns_array = singular_nouns_array.map{|noun| noun + 's'}
-    end
-    hash_arrays(nouns_array, verbs_array, adjectives_array)
+
+    hashed_word_arrays = operation_save_the_words(singular_nouns_array, plural_nouns_array, verbs_array, adjectives_array)
+    p "HASHWORDS" * 30
+    p hashed_word_arrays
+
+    hash_arrays(hashed_word_arrays[:sn], hashed_word_arrays[:pn],hashed_word_arrays[:v], hashed_word_arrays[:a] )
   end
 
-  def hash_arrays(nouns, verbs, adjectives)
+  def hash_arrays(singular_nouns, plural_nouns, verbs, adjectives)
     labeled = {}
-    labeled["singular noun"] = nouns
-    labeled["plural noun"] = nouns
+    labeled["singular noun"] = singular_nouns
+    labeled["plural noun"] = plural_nouns
     labeled["verb"] = verbs
     labeled["adjective"] = adjectives
     labeled
   end
+
+  def operation_save_the_words(singular_nouns, plural_nouns, verbs, adjectives)
+      singular_nouns = random_singular_nouns if singular_nouns.empty?
+      verbs = random_verbs if verbs.empty?
+      adjectives = random_adjectives if adjectives.empty?
+
+    if plural_nouns.empty?
+      plural_nouns = singular_nouns.map{|noun| noun + 's'}
+    end
+    {sn: singular_nouns, v: verbs, a: adjectives, pn: plural_nouns}
+  end
+
 
   def noun(nouns)
     nouns.sample
@@ -101,6 +117,19 @@ module GlibsHelper
 
   def adjective(adjectives)
     adjectives.sample
+  end
+
+
+  def random_singular_nouns
+
+  end
+
+  def random_verbs
+
+  end
+
+  def random_adjectives
+
   end
 
 

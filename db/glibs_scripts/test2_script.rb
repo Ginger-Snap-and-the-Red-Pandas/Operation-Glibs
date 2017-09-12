@@ -127,7 +127,7 @@ That concludes my presentation of *title.  Questions?"
 
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
-s3_glib_word_types = [ "noun", "noun", "verb", "noun" ]
+s3_glib_word_types = [ "singular noun", "singular noun", "verb", "singular noun" ]
 # ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
 ################
 ##################

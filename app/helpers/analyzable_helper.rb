@@ -13,6 +13,12 @@ module AnalyzableHelper
     pulled_tags = pic_data_set[0]
     pulled_caption = pic_data_set[1]
     pulled_POS = self.ling_call(pulled_tags)
+
+    # Write another Josh error here
+    if pulled_POS.is_a? String
+      return pulled_POS
+    end
+
     organized_data = self.arrange_photo_data(pulled_caption, pulled_tags, pulled_POS)
     return [pulled_caption, organized_data]
   end
@@ -76,6 +82,8 @@ private
       end
 
     ling_data = JSON.parse(response.body)
+    p "LING" * 20
+    p ling_data
     word_pos = ling_data[0]["result"]
     word_pos = word_pos.flatten
     word_pos.delete(",")

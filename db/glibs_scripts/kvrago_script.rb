@@ -100,7 +100,7 @@ s1_glib_word_types = [ "singular noun" ]
 ################
 ################
 ###Scene Two Dialogue (Write it inside the quotation marks):
-scene_two_dialogue = " The *word quickly *word up to a *caption. I screamed! "
+scene_two_dialogue = " The *word was quickly *word up as *caption. I screamed! "
 
 
 
