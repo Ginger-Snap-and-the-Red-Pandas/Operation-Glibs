@@ -1,0 +1,18 @@
+<ActionController::Parameters {"utf8"=>"✓",
+
+ "authenticity_token"=>"RyOyDurymSxY4jut+wQELSwAxFVmiysPbZ7ESVGI8Q2OMO4E46PsAzd4hU2PqiylXtCXM6Epx0DoZasWDT1otQ==",
+
+
+ "story"=><ActionController::Parameters
+    {"name"=>"SDgfadfsg",
+
+    "image1"=>#<ActionDispatch::Http::UploadedFile:0x007fc9aa688258 @tempfile=#<Tempfile:/var/folders/m6/0q9bgpyn2fxgf3qbtfr810l40000gn/T/RackMultipart20170912-64368-1w63lco.JPG>, @original_filename="IMG_0407.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"story[image1]\"; filename=\"IMG_0407.JPG\"\r\nContent-Type: image/jpeg\r\n">,
+
+
+    "image2"=>#<ActionDispatch::Http::UploadedFile:0x007fc9aa6881e0 @tempfile=#<Tempfile:/var/folders/m6/0q9bgpyn2fxgf3qbtfr810l40000gn/T/RackMultipart20170912-64368-1vrf17g.jpg>, @original_filename="hogan_recursion.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"story[image2]\"; filename=\"hogan_recursion.jpg\"\r\nContent-Type: image/jpeg\r\n">,
+
+    "image3"=>#<ActionDispatch::Http::UploadedFile:0x007fc9aa688168 @tempfile=#<Tempfile:/var/folders/m6/0q9bgpyn2fxgf3qbtfr810l40000gn/T/RackMultipart20170912-64368-behb7d.JPG>, @original_filename="IMG_0925.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"story[image3]\"; filename=\"IMG_0925.JPG\"\r\nContent-Type: image/jpeg\r\n">}
+
+ permitted: false>, "commit"=>"Begin Presentation", "controller"=>"stories", "action"=>"create", "genre_id"=>"3", "script_id"=>"3"}
+
+  permitted: false>

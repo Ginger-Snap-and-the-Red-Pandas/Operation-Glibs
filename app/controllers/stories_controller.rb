@@ -17,21 +17,39 @@ class StoriesController < ApplicationController
     @story.script = @script
 
     #Save that story!...finally, so nice
+    p "$" * 45
+    p params
     if @story.save
+      p "$%" * 45
+      @photo1 = Picture.new(picture_params[:image1])
+      @photo1.story=@story
+      @photo1.scene=@scenes[0]
+            p "$^&" * 45
+      p @photo1.image.url
+            p "$^&" * 45
+      @photo1.url=@photo1.image.url
+      p @photo1.valid?
+      p @photo1.errors.full_messages
+      @photo1.save
+      p "$^" * 45
+      #
+      # @photo2 = Picture.new(picture_params[:image2])
+      # @photo3 = Picture.new(picture_params[:image3])
 
-      @photo_urls = [picture_params[:url1], picture_params[:url2], picture_params[:url3]]
-      @photos = create_story_pictures(@story, @scenes, @photo_urls)
+      @image_files = [@photo1.image.url]#, @photo2.image.url, @photo3.image.url]
+      # @photos = create_story_pictures(@story, @scenes, @image_files)
 
       # Tells us if Josh, the user, or MS screwed up the api call
+      @photos = [@photo1]
       labeled_tags = josh_api_screwup(@photos)
 
       # If Josh screwed up, explains the issue to the user and re-renders form
-      if labeled_tags.is_a? String
-        @story.destroy
-        @story = Story.new
-        @script_scenes_dialogues = blank_glibs_for_script_show(@script)
-        return render 'scripts/show'
-      end
+      # if labeled_tags.is_a? String
+      #   @story.destroy
+      #   @story = Story.new
+      #   @script_scenes_dialogues = blank_glibs_for_script_show(@script)
+      #   return render 'scripts/show'
+      # end
 
       ### Generate the glibs for all of our scenes!!!
       #Gabe: Trust us, this works. Don't worry about the man behind the curtain.
@@ -60,7 +78,7 @@ class StoriesController < ApplicationController
     end
 
     def picture_params
-      params.require(:story).permit(:url1, :url2, :url3)
+      params.require(:story).permit(:image)#1, :image2, :image3)
     end
 
 end
