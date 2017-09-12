@@ -1,4 +1,5 @@
 <%= render 'stories/form' %>
+<%= link_to "Show Me a Random Story From This Script!", story_path(@random_story) %>
 
 <h3><%= @script.name %></h3>
 <% if @script_scenes_dialogues  %>
