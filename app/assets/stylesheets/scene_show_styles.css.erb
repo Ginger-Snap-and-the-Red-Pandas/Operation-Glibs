@@ -17,6 +17,7 @@
   width: 100%;
   height: 100%;
   margin: auto;
+  margin-top: 80px;
 }
 
 .curtain {
@@ -26,8 +27,102 @@
   width: 100%;
   height: 100%;
   margin: auto;
-  z-index: 999;
+  z-index: 1;
 }
+
+.bubble-wrap {
+  position: fixed;
+  left: 50%;
+  bottom: 10%;
+  width: 50%;
+  margin: auto;
+  z-index: 2
+}
+
+.bubble {
+  position: relative;
+  padding: 20px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  border: #7F7F7F solid 1px;
+  font-size: 1em;
+  line-height: 1.25em;
+  z-index: 1;
+}
+
+.bubble:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 16px 16px 16px 0;
+  border-color: transparent #FFFFFF;
+  display: block;
+  width: 0;
+  left: -15px;
+  top: 50%;
+  margin-top: -16px
+
+}
+
+.bubble:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 16px 16px 16px 0;
+  border-color: transparent #7F7F7F;
+  display: block;
+  width: 0;
+  z-index: 0;
+  left: -16px;
+  top: 50%;
+  margin-top: -16px;
+}
+
+#buttons-container {
+
+}
+
+#previous-button {
+  top:50%;
+  position: fixed;
+  z-index: 9999;
+}
+
+#next-button {
+  top:50%;
+  right: 0;
+  position: fixed;
+  z-index: 9999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Horizontal styles wide */
 /*.scene-image {
   position: relative;
