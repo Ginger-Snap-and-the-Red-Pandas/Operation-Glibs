@@ -17,14 +17,13 @@ class StoriesController < ApplicationController
     @story.script = @script
 
     #Save that story!...finally, so nice
-    p "$" * 45
-    p params
     if @story.save
 
 
-      @photo1 = Picture.new(picture_params_one)
-      @photo2 = Picture.new(picture_params_two)
-      @photo3 = Picture.new(picture_params_three)
+      # Photo saving logic!...place this into a helper method!!!
+      @photo1 = Picture.new(picture_params(picture_params_one))
+      @photo2 = Picture.new(picture_params(picture_params_two))
+      @photo3 = Picture.new(picture_params(picture_params_three))
       @photos = [@photo1, @photo2, @photo3]
       @photos.length.times do |i|
         photo = @photos[i]
@@ -74,15 +73,21 @@ class StoriesController < ApplicationController
       params.require(:story).permit(:name)
     end
 
+    def picture_params(picture_params_number)
+      final_params = {}
+      final_params[:image] = picture_params_number[:image1] || picture_params_number[:image2] || picture_params_number[:image3]
+      final_params
+    end
+
     def picture_params_one
-      params.require(:story).permit(:image1)
+      params.require("story").permit(:image1)
     end
 
     def picture_params_two
-      params.require(:story).permit(:image2)
+      params.require("story").permit(:image2)
     end
 
     def picture_params_three
-      params.require(:story).permit(:image3)
+      params.require("story").permit(:image3)
     end
 end

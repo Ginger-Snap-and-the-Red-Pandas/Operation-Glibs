@@ -9,4 +9,16 @@ class Picture < ApplicationRecord
 
   validates :story_id, :scene_id, :url, presence: :true
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+
+  def image1=(image1)
+    self.image = image1
+  end
+
+  def image2=(image)
+
+  end
+
+  def image3=(image)
+
+  end
 end
