@@ -34,6 +34,8 @@ class StoriesController < ApplicationController
         # p photo.image.url(:glib)
         photo.url = photo.image.url(:glib)
         photo.save
+        photo.url = photo.image.url(:glib)
+        photo.save
         @photos[i] = photo
       end
 
