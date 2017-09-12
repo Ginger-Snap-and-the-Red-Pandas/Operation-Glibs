@@ -29,8 +29,10 @@ class StoriesController < ApplicationController
         photo = @photos[i]
         photo.story=@story
         photo.scene=@scenes[i]
-        photo.image.url
-        photo.url= photo.image.url
+        p "El glibbo" * 15
+        p photo.image.url
+        p photo.image.url(:glib)
+        photo.url = photo.image.url(:glib)
         photo.save
         @photos[i] = photo
       end

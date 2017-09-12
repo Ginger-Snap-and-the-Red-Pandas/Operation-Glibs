@@ -57,13 +57,17 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
   storage: :s3,
+  url: ':s3_domain_url',
+  path: ':class',
+  # path: ':class/:attachment/:id/:style.:extension',
+  # https://s3.us-east-2.amazonaws.com/glibs-image-bucket/pictures/images/000/000/057/glib/(Old_Faithful_2.0).jpg
   s3_credentials: {
     bucket: ENV['S3_BUCKET_NAME'],
     access_key_id: ENV['AWS_ACCESS_KEY_ID'],
     secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
     s3_region: ENV['AWS_REGION'],
     s3_host_name: ENV['AWS_ENDPOINT'],
-    s3_protocol: :https
+    s3_protocol: ":https"
   }
 }
 end
