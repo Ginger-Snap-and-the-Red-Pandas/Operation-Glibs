@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   get '/sandbox' => 'scenes#index'
   resources :genres, only: [:index] do
-    resources :scripts, only: [:index, :show]
+    resources :scripts, only: [:index, :show] do
+      resources :stories, only: [:create]
+    end
   end
-  resources :stories, only: [:create, :show] do
+  resources :stories, only: [:show] do
     resources :scenes, only: [:show]
     # resources :pictures, only: [:create]
     # resources :generated_words, only: [:create]
