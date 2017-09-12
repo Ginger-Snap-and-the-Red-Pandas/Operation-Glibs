@@ -82,8 +82,7 @@ private
       end
 
     ling_data = JSON.parse(response.body)
-    p "LING" * 20
-    p ling_data
+
     word_pos = ling_data[0]["result"]
     word_pos = word_pos.flatten
     word_pos.delete(",")

@@ -11,8 +11,6 @@ module GlibsHelper
     categorized_words = categorize_words(photo_libs)
     word_blanks.each do |word_blank|
       samples = categorized_words[word_blank.word_type]
-      p "SAMPLE" * 88
-      p samples
       GeneratedWord.create!(word: samples.sample, story: story, word_blank: word_blank)
     end
   end
@@ -80,8 +78,6 @@ module GlibsHelper
     end
 
     hashed_word_arrays = operation_save_the_words(singular_nouns_array, plural_nouns_array, verbs_array, adjectives_array)
-    p "HASHWORDS" * 30
-    p hashed_word_arrays
 
     hash_arrays(hashed_word_arrays[:sn], hashed_word_arrays[:pn],hashed_word_arrays[:v], hashed_word_arrays[:a] )
   end
@@ -121,7 +117,7 @@ module GlibsHelper
 
 
   def random_singular_nouns
-    ["glib", "tire iron", "hot dog", "digney", "penguin", "watermelon", "Barney the Dinosaur", "dinosaur"]
+    ["glib", "tire iron", "hot dog", "digney", "penguin", "watermelon", "Barney the Dinosaur", "not dinosaur"]
   end
 
   def random_verbs
