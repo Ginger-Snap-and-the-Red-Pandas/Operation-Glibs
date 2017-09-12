@@ -20,21 +20,22 @@ class StoriesController < ApplicationController
     p "$" * 45
     p params
     if @story.save
-      p "$%" * 45
-      @photo1 = Picture.new(picture_params)
-      @photo1.story=@story
-      @photo1.scene=@scenes[0]
-            p "$^&" * 45
-      p @photo1.image.url
-            p "$^&" * 45
-      @photo1.url=@photo1.image.url
-      p @photo1.valid?
-      p @photo1.errors.full_messages
-      @photo1.save
-      p "$^" * 45
-      #
-      # @photo2 = Picture.new(picture_params[:image2])
-      # @photo3 = Picture.new(picture_params[:image3])
+
+
+      @photo1 = Picture.new(picture_params_one)
+      @photo2 = Picture.new(picture_params_two)
+      @photo3 = Picture.new(picture_params_three)
+      @photos = [@photo1, @photo2, @photo3]
+      @photos.length.times do |i|
+        photo = @photos[i]
+        photo.story=@story
+        photo.scene=@scenes[i]
+        photo.image.url
+        photo.url= photo.image.url
+        photo.save
+        @photos[i] = photo
+      end
+
 
       @image_files = [@photo1.image.url]#, @photo2.image.url, @photo3.image.url]
       # @photos = create_story_pictures(@story, @scenes, @image_files)
@@ -77,8 +78,15 @@ class StoriesController < ApplicationController
       params.require(:story).permit(:name)
     end
 
-    def picture_params
-      params.require(:story).permit(:image)#1, :image2, :image3)
+    def picture_params_one
+      params.require(:story).permit(:image1)
     end
 
+    def picture_params_two
+      params.require(:story).permit(:image2)
+    end
+
+    def picture_params_three
+      params.require(:story).permit(:image3)
+    end
 end
