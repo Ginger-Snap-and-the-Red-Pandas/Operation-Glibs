@@ -199,11 +199,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
   aws-sdk (~> 2.3.0)
-=======
   bourbon
->>>>>>> master
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
