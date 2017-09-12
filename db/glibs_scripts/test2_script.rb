@@ -91,15 +91,15 @@ script_title = " SCRIPT ZEROTH "
 ###Scene One Dialogue (Write it inside the quotation marks):
 scene_one_dialogue = "On my most recent exploration mission of planet Terra, I learned about something called...*title.
 The first thing I encountered was *caption.
-It appears that these things called *word enjoy *word into and around *word.
-A *word detected me, so I escaped a *word and changed position."
+It appears that these things called *word enjoy *word into and around the *word.
+A *word detected me, so I escaped using a *word and changed position."
 
 
 
 
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
-s1_glib_word_types = [ "noun", "verb", "noun", "noun", "noun" ]
+s1_glib_word_types = [ "plural noun", "verb", "singular noun", "singular noun", "singular noun" ]
 # ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
 ################
 ###DO NOT USE LINE BREAKS/HIT THE RETURN KEY ANYWHERE IN YOUR SCRIPT###
@@ -113,14 +113,13 @@ It appears that *word like *word *word."
 
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
-s2_glib_word_types = [ "noun", "verb", "noun" ]
+s2_glib_word_types = [ "plural noun", "verb", "plural noun" ]
 # ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
 ################
 ###DO NOT USE LINE BREAKS/HIT THE RETURN KEY ANYWHERE IN YOUR SCRIPT###
 ################
 ###Scene Three Dialogue (Write it inside the quotation marks):
-scene_three_dialogue = "Finally, the Gleep Glops back at the lab were excited to learn
-that, when a *word sees a *word, *word occurs on all the *word.
+scene_three_dialogue = "Finally, the Gleep Glops back at the lab were excited to learn that, when a *word sees a *word, *word occurs on the *word.
 Who would have guessed that *caption would provide so much data?!?
 That concludes my presentation of *title.  Questions?"
 
@@ -128,7 +127,7 @@ That concludes my presentation of *title.  Questions?"
 
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
-s3_glib_word_types = [ "noun", "noun", "verb", "noun" ]
+s3_glib_word_types = [ "singular noun", "singular noun", "verb", "singular noun" ]
 # ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
 ################
 ##################

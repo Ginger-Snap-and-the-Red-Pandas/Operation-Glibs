@@ -74,7 +74,7 @@
 ##    Anytime you write a glib in the dialogue (i.e. '*word' ), add that glib's word type into the  Glib_Word_Types array for that scene.
 #
 # You're glib_word_types should ultimately end up looking something like this -
-# ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
+# ex:  s#_glib_word_types = ["singular noun", "singular noun", "adjective", "plural noun", "verb", "adjective"]
 #
 #
 #   LESS IMPORTANT NOTE: Expect all verbs in your story to end in the suffix "-ing", because that's what the photo API returns.
@@ -95,20 +95,20 @@ scene_one_dialogue = " Walking in the woods one day, I saw a *word that was *cap
 
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
-s1_glib_word_types = [ "noun" ]
-# ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
+s1_glib_word_types = [ "singular noun" ]
+#  ex:  s#_glib_word_types = ["singular noun", "singular noun", "adjective", "plural noun", "verb", "adjective"]
 ################
 ################
 ###Scene Two Dialogue (Write it inside the quotation marks):
-scene_two_dialogue = " The *word quickly *word up to a *caption. I screamed! "
+scene_two_dialogue = " The *word was quickly *word up as *caption. I screamed! "
 
 
 
 
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
-s2_glib_word_types = [ "noun", "verb" ]
-# ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
+s2_glib_word_types = [ "singular noun", "verb" ]
+#  ex:  s#_glib_word_types = ["singular noun", "singular noun", "adjective", "plural noun", "verb", "adjective"]
 ################
 ################
 ###Scene Three Dialogue (Write it inside the quotation marks):
@@ -118,8 +118,8 @@ scene_three_dialogue = " What could a poor *caption like me do in this *word *wo
 
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
-s3_glib_word_types = [ "adjective", "noun" ]
-# ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
+s3_glib_word_types = [ "adjective", "singular noun" ]
+#  ex:  s#_glib_word_types = ["singular noun", "singular noun", "adjective", "plural noun", "verb", "adjective"]
 ################
 ################
 
