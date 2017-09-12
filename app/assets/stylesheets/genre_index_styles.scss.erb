@@ -1,0 +1,12 @@
+#character-genre {
+  position: fixed;
+  width: 400px;
+  height: 240px;
+  background: url("<%= asset_path 'alientwo.png' %>");
+  animation: play 0.7s steps(4) infinite;
+  z-index: 5;
+}
+
+@keyframes play {
+   100% { background-position: -1280px; }
+}
