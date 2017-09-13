@@ -59,6 +59,7 @@ Rails.application.configure do
   storage: :s3,
 
   path: '/public/:id_:filename',
+  s3_protocol: "https",
 
   s3_credentials: {
     bucket: ENV['S3_BUCKET_NAME'],
@@ -66,7 +67,6 @@ Rails.application.configure do
     secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
     s3_region: ENV['AWS_REGION'],
     s3_host_name: 's3.us-east-2.amazonaws.com',
-    s3_protocol: ":https"
   }
 }
 end
