@@ -58,7 +58,6 @@ Rails.application.configure do
   config.paperclip_defaults = {
   storage: :s3,
 
-  # url: '/public/:id_:filename',
   path: '/public/:id_:filename',
 
   s3_credentials: {
@@ -71,13 +70,3 @@ Rails.application.configure do
   }
 }
 end
-
-  # url: 'https://s3.us-east-2.amazonaws.com',
-  # path: '/public/:id:basename.:extension',
-  # path: '/public/default.png',
-  # path: ':class/:attachment:id',
-
-    # https://s3.us-east-2.amazonaws.com/glibs-image-bucket/pictures/images/000/000/057/glib/(Old_Faithful_2.0).jpg
-
-
-# http://s3.us-east-2.amazonaws.com/glibs-image-bucket/Users/gabrielosborne/Desktop/DBC/finalProject/Operation-Glibs/public/public/images/42_IMG_3071.JPG?1505259477
