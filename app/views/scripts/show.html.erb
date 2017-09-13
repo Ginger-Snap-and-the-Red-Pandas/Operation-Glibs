@@ -1,16 +1,16 @@
-<%= render 'stories/form' %><br>
-<% if @random_story != nil %>
-<%= link_to "See a Random #{@script.name} Story", story_path(@random_story.share_url) %>
-<% end %>
+<%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
 
-
-<h3><%= @script.name %></h3>
-<% if @script_scenes_dialogues  %>
-  <% @script_scenes_dialogues.each do |scene_dialogue| %>
-    <p><%= scene_dialogue %></p>
+  <%= render 'stories/form' %><br>
+  <% if @random_story != nil %>
+  <%= link_to "See a Random #{@script.name} Story", story_path(@random_story.share_url) %>
   <% end %>
-<% end %>
 
+  <h3><%= @script.name %></h3>
+  <% if @script_scenes_dialogues  %>
+    <% @script_scenes_dialogues.each do |scene_dialogue| %>
+      <p><%= scene_dialogue %></p>
+    <% end %>
+  <% end %>
 
 
 

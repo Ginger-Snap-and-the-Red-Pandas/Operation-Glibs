@@ -4,7 +4,6 @@ $(document).ready(function(){
   grabFirstScene();
   grabNextScene();
   grabPreviousScene();
-  showPage();
 })
 
 
@@ -22,7 +21,6 @@ var grabPreviousScene = function(){
 
 var renderNextScene = function(event){
   event.preventDefault();
-  console.log("First hotdoggo scene");
   var $button = $(this);
   var url = $button.attr('href');
   console.log(url);
@@ -30,8 +28,6 @@ var renderNextScene = function(event){
     method: "GET",
     url: url
   }).done(function(response){
-    console.log("Hi five, bro!");
-    console.log(response);
     $("#show-act").html(response);
   })
 }
