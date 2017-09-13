@@ -1,4 +1,4 @@
-
+<!--
 <div id="show-page">
 
   <div id="story-container">
@@ -30,7 +30,9 @@
       <% end %>
     </div>
   </div>
+</div> -->
+
+
+<div id="curtain" style="background: url(<%= @photo.url%>); background-position: center;background-repeat: no-repeat;">
+  <%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
 </div>
-
-
-
