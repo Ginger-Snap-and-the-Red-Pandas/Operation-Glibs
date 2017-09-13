@@ -1,10 +1,11 @@
-<%= render 'stories/form' %>
+<div id="script-show-page">
+  <%= render 'stories/form' %>
 
-<h3><%= @script.name %></h3>
-<% if @script_scenes_dialogues  %>
-  <% @script_scenes_dialogues.each do |scene_dialogue| %>
-    <p><%= scene_dialogue %></p>
+  <h3 ><%= @script.name %></h3>
+  <% if @script_scenes_dialogues  %>
+    <% @script_scenes_dialogues.each do |scene_dialogue| %>
+      <p><%= scene_dialogue %></p>
+    <% end %>
   <% end %>
-<% end %>
-
+</div>
 
