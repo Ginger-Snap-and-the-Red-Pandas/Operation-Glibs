@@ -1,23 +1,24 @@
-<div id="show-page">
+<div id="show-act">
+  <div id="show-page">
 
-  <div id="curtain-container" style="background-position: center;background-repeat: no-repeat; background-size: 100%">
+    <div id="curtain-container" style="background-position: center;background-repeat: no-repeat; background-size: 100%">
 
-    <%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
+      <%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
 
-    <div id="character"></div>
-    <div class="bubble-wrap">
-      <div class="bubble">
-        <p><%= @dialogue %> - The Story<br>
-        <%= link_to "Begin Act One", story_scene_path(@story.share_url, @next_scene), id: 'first-scene-button' %></p>
+      <div id="character"></div>
+      <div class="bubble-wrap">
+        <div class="bubble">
+          <p><%= @dialogue %> - The Story<br>
+          <%= link_to "Begin Act One", story_scene_path(@story.share_url, @next_scene), id: 'first-scene-button' %></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="buttons-container">
+      <%= link_to "Next", story_scene_path(@story.share_url, @next_scene), id: 'first-scene-button' %>
+      <div id="new-glib">
       </div>
     </div>
   </div>
-
-  <div id="buttons-container">
-    <%= link_to "Next", story_scene_path(@story.share_url, @next_scene), id: 'first-scene-button' %>
-    <div id="new-glib">
-    </div>
-  </div>
 </div>
-
 <%= javascript_include_tag('show_js/show.js') %>

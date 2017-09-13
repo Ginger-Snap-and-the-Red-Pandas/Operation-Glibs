@@ -1,0 +1,29 @@
+<div id="curtain-container" style="background: url(<%= @photo.url%>); background-position: center;background-repeat: no-repeat; background-size: 100%">
+  <%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
+   <div id="character"></div>
+  <div class="bubble-wrap">
+    <div class="bubble">
+      <%= @dialogue %>
+    </div>
+  </div>
+</div>
+
+<div id="buttons-container">
+    <% if @scene != @scenes.first %><br>
+
+      <%= link_to "", story_scene_path(@story.share_url, @previous_scene), id: 'previous-button' %>
+    <% end %>
+
+    <% if @scene != @scenes.last %>
+      <%= link_to "", story_scene_path(@story.share_url, @next_scene), id: 'next-button' %>
+    <% end %>
+
+<div id="new-glib">
+    <% if @scene == @scenes.last %>
+      <p>If you would like to share this story copy the link below: <br>
+        <em><strong>glibs.herokuapp.com/stories/<%=@story.share_url%></strong></em> <br><br>
+         <%= link_to "Make More Glibs", root_path %>
+      </p>
+    <% end %>
+  </div>
+</div>
