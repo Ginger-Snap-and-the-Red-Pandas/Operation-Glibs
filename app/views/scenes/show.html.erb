@@ -11,11 +11,11 @@
   <div id="buttons-container">
       <% if @scene != @scenes.first %><br>
 
-        <%= link_to "Previous", story_scene_path(@story.share_url, @previous_scene), id: 'previous-button' %>
+        <%= link_to "", story_scene_path(@story.share_url, @previous_scene), id: 'previous-button' %>
       <% end %>
 
       <% if @scene != @scenes.last %>
-        <%= link_to "Next", story_scene_path(@story.share_url, @next_scene), id: 'next-button' %>
+        <%= link_to "", story_scene_path(@story.share_url, @next_scene), id: 'next-button' %>
       <% end %>
 
   <div id="new-glib">

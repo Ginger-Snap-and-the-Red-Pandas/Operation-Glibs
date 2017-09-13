@@ -10,5 +10,8 @@ class ScenesController < ApplicationController
     @dialogue = fill_glibs_for_scene_show(@story, @scene)
   end
 
+  def end
+    @story = Story.find(params[:story_id])
+  end
 
 end
