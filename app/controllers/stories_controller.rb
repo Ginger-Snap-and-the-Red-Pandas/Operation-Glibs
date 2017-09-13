@@ -18,7 +18,7 @@ class StoriesController < ApplicationController
     #Assign story attributes, so the story can be saved
     @story.genre = @genre
     @story.script = @script
-    @story.public = true if public_params[:public] == 1
+    @story.public = true if public_params[:public] == "1"
 
 
     #Save that story!...finally, so nice
