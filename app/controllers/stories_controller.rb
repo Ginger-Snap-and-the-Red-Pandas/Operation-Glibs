@@ -19,7 +19,7 @@ class StoriesController < ApplicationController
     @story.genre = @genre
     @story.script = @script
     @story.public = true if public_params[:public] == "1"
-
+    @story.generate_story_url
 
     #Save that story!...finally, so nice
     if @story.save
