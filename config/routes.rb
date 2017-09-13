@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   #   # resources :pictures, only: [:create]
   #   # resources :generated_words, only: [:create]
   # end
-
+    # get '/end' => 'scenes#end'
   root 'genres#index'
 end

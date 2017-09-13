@@ -1,8 +1,8 @@
-<h1>Choose a Character!</h1>
+
+<div id="genre-container">
+  <h1 id="genre-title">Choose a Character!</h1>
+  <%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
 
 
-<%= render @genres %>
-
-<% if @story %>
-<%= link_to 'See a Random Story', story_path(@story.share_url) %>
-<% end %>
+  <%= render @genres %>
+</div>
