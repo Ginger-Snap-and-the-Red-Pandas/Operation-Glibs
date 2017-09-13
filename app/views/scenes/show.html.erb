@@ -1,24 +1,21 @@
-
-<div id="show-page">
-
-  <div id="story-container">
-    <%= image_tag(@photo.url, class: "scene-image" )%>
-    <%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
-    <div id="character"></div>
-      <div class="bubble-wrap">
-       <div class="bubble">
-          <%= @dialogue %>
-        </div>
+<div id="curtain-container" style="background: url(<%= @photo.url%>); background-position: center;background-repeat: no-repeat; background-size: 100%">
+  <%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
+   <div id="character"></div>
+  <div class="bubble-wrap">
+    <div class="bubble">
+      <%= @dialogue %>
     </div>
   </div>
+</div>
 
   <div id="buttons-container">
       <% if @scene != @scenes.first %><br>
-        <%= link_to "Previous", story_scene_path(@story.share_url, @previous_scene), id: 'previous-button' %>
+
+        <%= link_to "", story_scene_path(@story.share_url, @previous_scene), id: 'previous-button' %>
       <% end %>
 
       <% if @scene != @scenes.last %>
-        <%= link_to "Next", story_scene_path(@story.share_url, @next_scene), id: 'next-button' %>
+        <%= link_to "", story_scene_path(@story.share_url, @next_scene), id: 'next-button' %>
       <% end %>
 
   <div id="new-glib">
@@ -30,7 +27,3 @@
       <% end %>
     </div>
   </div>
-</div>
-
-
-

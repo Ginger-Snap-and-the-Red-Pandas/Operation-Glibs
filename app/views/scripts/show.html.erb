@@ -1,4 +1,7 @@
-<%= render 'stories/form' %>
+<%= render 'stories/form' %><br>
+<% if @random_story != nil %>
+<%= link_to "See a Random #{@script.name} Story", story_path(@random_story.share_url) %>
+<% end %>
 
 
 <h3><%= @script.name %></h3>
@@ -7,3 +10,8 @@
     <p><%= scene_dialogue %></p>
   <% end %>
 <% end %>
+
+
+
+
+
