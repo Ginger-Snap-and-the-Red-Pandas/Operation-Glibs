@@ -1,9 +1,10 @@
-<h1 id="please-help">Please Help Us Complete Our Story:</h1>
+<h1 id="please-help">Help Us Complete Our Story:</h1>
 <% if @error %>
   <p> <%= @error %> </p>
 <% end %>
 
-<%= form_with(url: genre_script_stories_path(@genre, @script, @story), id: "new-story-form", model: @story, local: true) do |form| %>
+<div id="new-story-form">
+<%= form_with(url: genre_script_stories_path(@genre, @script, @story), model: @story, local: true) do |form| %>
   <% if @story.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being told:</h2>
@@ -44,3 +45,4 @@
     <%= form.submit "Begin Presentation" %>
   </div>
 <% end %>
+</div>
