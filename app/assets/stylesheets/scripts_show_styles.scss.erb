@@ -3,23 +3,59 @@
 
 
 #please-help {
-  position: absolute;
-  margin-top: 25%;
-  margin-left: 25%
+  position: relative;
+  margin-top: 30%;
+  margin-left: 20%
 
 }
 
 
+#new-story-form{
+  margin-right: 30%;
+  margin-left: 25%;
+
+}
+/* Makes responsive fields. Sets size and field alignment.*/
+input[type=file]{
+margin-bottom: 20px;
+margin-top: 10px;
+width:100%;
+padding: 5px;
+border-radius:5px;
+border:1px solid #7ac9b7;
+}
+input[type=submit]
+{
+margin-bottom: 20px;
+width:100%;
+padding: 5px;
+border-radius:5px;
+border:1px solid #7ac9b7;
+background-color: #4180C5;
+color: aliceblue;
+font-size:15px;
+cursor:pointer;
+}
+
+#script {
+  margin-right: 20%;
+  margin-left: 20%;
+  padding-bottom: 100px;
+
+}
 }
 
 
 
 
 
-/*DESKTOP STYLES*/
+
+/*/*DESKTOP STYLES*/
 @media (min-width: 481px) {
 
-#genre-container {
+#scripts-show {
+  display: block;
+  background-attachment: local;
   position: relative;
   margin-left: 25%;
   margin-right: 25%;
@@ -28,26 +64,35 @@
 
 }
 
-
-#genre-title {
+#please-help {
   position: absolute;
-  margin-top: 25%;
-  margin-left: 18%
+  top: 0;
+  bottom: 0;
+  margin-top: 20%;
+  margin-left: 20%;
+  font-size: 1.5em;
 
 }
 
-#character-genre {
+
+#new-story-form{
   position: absolute;
-  left: 10%;
-  bottom: 10%;
-  width: 400px;
-  height: 240px;
-  background: url("<%= asset_path 'alientwo.png' %>");
-  animation: play 0.7s steps(4) infinite;
+  top: 150px;
+  bottom: 0;
+  margin-right: 30%;
+  margin-left: 25%;
 
 }
 
-@keyframes play {
-   100% { background-position: -1280px; }
+
+
+#script {
+  position: absolute;
+  margin-right: 20%;
+  margin-left: 20%;
+  padding-bottom: 100px;
+
 }
+
 }
+
