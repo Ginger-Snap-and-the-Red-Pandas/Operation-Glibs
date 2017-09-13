@@ -1,3 +1,7 @@
 <h1>Choose a Story!</h1>
 
 <%= render @scripts %>
+
+<% if @story != nil %>
+<%= link_to "See a Random #{@genre.genre_name} Story", story_path(@story.share_url) %>
+<% end %>
