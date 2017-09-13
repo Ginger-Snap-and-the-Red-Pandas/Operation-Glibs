@@ -1,7 +1,7 @@
 class ScenesController < ApplicationController
 
   def show
-    @story = Story.find(params[:story_id])
+    @story = Story.find_by(share_url: params[:story_url])
     @scene = Scene.find(params[:id])
     @scenes = @story.scenes
     @previous_scene = @scene.previous
