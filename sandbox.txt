@@ -1,18 +1,10 @@
-<ActionController::Parameters {"utf8"=>"✓",
+ctionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"5tN8+jvHL8fd623SrAhIpJ7ITPJGPw4xpq1n4mlaqz5LQ2HYSnYTQwdd7tmy3sFvn005rhA1hFUkPTWcV+o8vQ==", "story"=>
+  {"name"=>"My Second  Earth",
 
- "authenticity_token"=>"RyOyDurymSxY4jut+wQELSwAxFVmiysPbZ7ESVGI8Q2OMO4E46PsAzd4hU2PqiylXtCXM6Epx0DoZasWDT1otQ==",
+  "image1"=>#<ActionDispatch::Http::UploadedFile:0x007f9bd60c4b20 @tempfile=#<Tempfile:/var/folders/29/m7fk59ws5q79pxj6tsk6pm280000gn/T/RackMultipart20170913-2282-wezmp2.jpg>, @original_filename="dinosaur vs dinosaur.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"story[image1]\"; filename=\"dinosaur vs dinosaur.jpg\"\r\nContent-Type: image/jpeg\r\n">,
 
+  "image2"=>#<ActionDispatch::Http::UploadedFile:0x007f9bd60c4aa8 @tempfile=#<Tempfile:/var/folders/29/m7fk59ws5q79pxj6tsk6pm280000gn/T/RackMultipart20170913-2282-1tsp58w.jpg>, @original_filename="dinosaurs_vs__hell_knight_by_noxitron3.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"story[image2]\"; filename=\"dinosaurs_vs__hell_knight_by_noxitron3.jpg\"\r\nContent-Type: image/jpeg\r\n">, "image3"=>#<ActionDispatch::Http::UploadedFile:0x007f9bd60c4a30 @tempfile=#<Tempfile:/var/folders/29/m7fk59ws5q79pxj6tsk6pm280000gn/T/RackMultipart20170913-2282-ciniey.jpg>, @original_filename="Knight vs Dinosaur.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"story[image3]\"; filename=\"Knight vs Dinosaur.jpg\"\r\nContent-Type: image/jpeg\r\n">,
 
- "story"=><ActionController::Parameters
-    {"name"=>"SDgfadfsg",
+  "public"=>"1"},
 
-    "image1"=>#<ActionDispatch::Http::UploadedFile:0x007fc9aa688258 @tempfile=#<Tempfile:/var/folders/m6/0q9bgpyn2fxgf3qbtfr810l40000gn/T/RackMultipart20170912-64368-1w63lco.JPG>, @original_filename="IMG_0407.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"story[image1]\"; filename=\"IMG_0407.JPG\"\r\nContent-Type: image/jpeg\r\n">,
-
-
-    "image2"=>#<ActionDispatch::Http::UploadedFile:0x007fc9aa6881e0 @tempfile=#<Tempfile:/var/folders/m6/0q9bgpyn2fxgf3qbtfr810l40000gn/T/RackMultipart20170912-64368-1vrf17g.jpg>, @original_filename="hogan_recursion.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"story[image2]\"; filename=\"hogan_recursion.jpg\"\r\nContent-Type: image/jpeg\r\n">,
-
-    "image3"=>#<ActionDispatch::Http::UploadedFile:0x007fc9aa688168 @tempfile=#<Tempfile:/var/folders/m6/0q9bgpyn2fxgf3qbtfr810l40000gn/T/RackMultipart20170912-64368-behb7d.JPG>, @original_filename="IMG_0925.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"story[image3]\"; filename=\"IMG_0925.JPG\"\r\nContent-Type: image/jpeg\r\n">}
-
- permitted: false>, "commit"=>"Begin Presentation", "controller"=>"stories", "action"=>"create", "genre_id"=>"3", "script_id"=>"3"}
-
-  permitted: false>
+  "commit"=>"Begin Presentation", "controller"=>"stories", "action"=>"create", "genre_id"=>"2", "script_id"=>"4"} permitted: false>

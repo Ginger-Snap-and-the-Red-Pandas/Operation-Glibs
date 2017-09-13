@@ -7,6 +7,9 @@ class StoriesController < ApplicationController
 
   def create
 
+    p "BEANS is ADORABLE" * 20
+    p params
+
     @story = Story.new(story_params)
     @genre = Genre.find(params[:genre_id])
     @script = Script.find(params[:script_id])
@@ -15,6 +18,8 @@ class StoriesController < ApplicationController
     #Assign story attributes, so the story can be saved
     @story.genre = @genre
     @story.script = @script
+    @story.public = true if public_params[:public] == 1
+
 
     #Save that story!...finally, so nice
     if @story.save
@@ -72,6 +77,10 @@ class StoriesController < ApplicationController
   private
     def story_params
       params.require(:story).permit(:name)
+    end
+
+    def public_params
+      params.require(:story).permit(:public)
     end
 
     def picture_params(picture_params_number)
