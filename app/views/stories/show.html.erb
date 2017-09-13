@@ -1,5 +1,5 @@
 
-<div id="curtain-container" style="background: url(<%= @photo.url%>); background-position: center;background-repeat: no-repeat; background-size: 100%">
+<div id="curtain-container" style="background: ''; background-position: center;background-repeat: no-repeat; background-size: 100%">
   <%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
   <div id="character"></div>
   <div class="bubble-wrap">
@@ -10,7 +10,7 @@
 </div>
 
 <div id="buttons-container">
-  <% if @scene != @scenes.first %><br>
+  <% if @scene && @scene != @scenes.first %><br>
 
     <%= link_to "Previous", story_scene_path(@story.share_url, @previous_scene), id: 'previous-button' %>
   <% end %>
