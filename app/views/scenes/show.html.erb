@@ -1,8 +1,8 @@
 
 <div id="show-page">
 
-  <div id="story-container">
-    <%= image_tag(@photo.url, class: "scene-image" )%>
+  <div id="story-container" styles="background-image:<%= image_tag(@photo.url);%>">
+
     <%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
     <div id="character"></div>
       <div class="bubble-wrap">
