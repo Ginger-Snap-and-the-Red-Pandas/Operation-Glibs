@@ -70,7 +70,8 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find_by(share_url: params[:story_url])
-    redirect_to story_scene_path(@story.share_url, @story.scenes.first)
+    render 'show', layout: :false
+    # redirect_to story_scene_path(@story.share_url, @story.scenes.first)
   end
 
   private
