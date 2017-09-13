@@ -42,6 +42,22 @@ module GlibsHelper
     dialogue
   end
 
+  def fill_style_glibs_for_scene_show(story, scene)
+    dialogue = scene.dialogue
+    generated_words = scene.word_blanks.to_ary.map!{|word_blank| word_blank.generated_words.find_by(story: story)}
+    generated_words.map!{|generated_word| generated_word.word}
+    caption = generated_words.shift
+
+    dialogue.sub!("*title", story.name)
+    dialogue.sub!("*caption", caption)
+
+    generated_words.each do |word|
+      glib = word.upcase
+      dialogue.sub!("*word", glib)
+    end
+    dialogue
+  end
+
 
   private
 
