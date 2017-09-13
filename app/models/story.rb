@@ -12,7 +12,28 @@ class Story < ApplicationRecord
 
   validates :genre_id, :script_id, presence: :true
 
+  def generate_story_url
+    if !self.share_url
+      unique = false
+      until unique
+        random_url = ''
+        8.times { random_url << random_char }
+        unique = unique_url?(random_url)
+      end
+      self.share_url = random_url
+    end
+  end
+
   private
+
+  def unique_url?(generated_url)
+    !Story.find_by(share_url: generated_url)
+  end
+
+  def random_char
+    chars = ('a'..'z').to_a + ('1'..'9').to_a
+    chars.sample
+  end
 
   # def destroy_all_pictures
   #   self.pictures.delete_all

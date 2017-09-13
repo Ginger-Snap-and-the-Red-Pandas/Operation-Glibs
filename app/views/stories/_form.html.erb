@@ -20,13 +20,24 @@
     <%= form.text_field :name, id: :story_title, placeholder: "Story Title" %>
   </div>
   <div class="field">
+    <%= form.label :image1, "Photo for Act One:" %>
+    <br>
     <%= form.file_field :image1, id: :user_image, placeholder: "Act 1 URL" %>
   </div>
   <div class="field">
+    <%= form.label :image2, "Photo for Act Two:" %>
+    <br>
     <%= form.file_field :image2, id: :user_image, placeholder: "Act 2 URL" %>
   </div>
   <div class="field">
+    <%= form.label :image3, "Photo for Act Three:" %>
+    <br>
     <%= form.file_field :image3, id: :user_image, placeholder: "Act 3 URL" %>
+  </div>
+
+  <div class="field">
+    <%= form.check_box :public, id: :public %>
+    <%= form.label :public, "Make my story public to the adoring masses!" %>
   </div>
 
   <div class="actions">

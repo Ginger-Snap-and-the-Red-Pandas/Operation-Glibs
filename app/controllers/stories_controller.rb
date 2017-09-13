@@ -15,6 +15,8 @@ class StoriesController < ApplicationController
     #Assign story attributes, so the story can be saved
     @story.genre = @genre
     @story.script = @script
+    @story.public = true if public_params[:public] == "1"
+    @story.generate_story_url
 
     #Save that story!...finally, so nice
     if @story.save
@@ -53,25 +55,31 @@ class StoriesController < ApplicationController
       #Dillon: "It might work, let's see"
       create_story_generated_words(labeled_tags, @scenes, @story)
 
-      redirect_to @story
+      redirect_to story_path(@story.share_url)
     else
       @script_scenes_dialogues = blank_glibs_for_script_show(@script)
       render 'scripts/show'
     end
 
-
-#
   end
 
+  def gliblit
+    @story = Story.find_by(share_url: params[:story_url])
+    redirect_to story_scene_path(@story, @story.scenes.first)
+  end
 
   def show
-    @story = Story.find(params[:id])
-    redirect_to story_scene_path(@story, @story.scenes.first)
+    @story = Story.find_by(share_url: params[:story_url])
+    redirect_to story_scene_path(@story.share_url, @story.scenes.first)
   end
 
   private
     def story_params
       params.require(:story).permit(:name)
+    end
+
+    def public_params
+      params.require(:story).permit(:public)
     end
 
     def picture_params(picture_params_number)
