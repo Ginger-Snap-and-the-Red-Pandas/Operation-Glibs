@@ -2,7 +2,7 @@ class GenresController < ApplicationController
 
   def index
     @genres = Genre.all
-    @story = Story.all.sample
+    @story = Story.where(public: :true).sample
   end
 
 
