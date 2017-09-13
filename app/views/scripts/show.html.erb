@@ -5,6 +5,7 @@
   <%= link_to "See a Random #{@script.name} Story", story_path(@random_story.share_url) %>
   <% end %>
 
+<div id="script">
   <h3><%= @script.name %></h3>
   <% if @script_scenes_dialogues  %>
     <% @script_scenes_dialogues.each do |scene_dialogue| %>
@@ -12,6 +13,6 @@
     <% end %>
   <% end %>
 
-
+</div>
 
 
