@@ -2,3 +2,7 @@
 
 
 <%= render @genres %>
+
+<% if @story %>
+<%= link_to 'See a Random Story', story_path(@story.share_url) %>
+<% end %>

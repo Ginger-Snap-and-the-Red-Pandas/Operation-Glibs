@@ -74,7 +74,7 @@
 ##    Anytime you write a glib in the dialogue (i.e. '*word' ), add that glib's word type into the  Glib_Word_Types array for that scene.
 #
 # You're glib_word_types should ultimately end up looking something like this -
-# ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
+#  ex:  s#_glib_word_types = ["singular noun", "singular noun", "adjective", "plural noun", "verb", "adjective"]
 #
 #
 #   LESS IMPORTANT NOTE: Expect all verbs in your story to end in the suffix "-ing", because that's what the photo API returns.
@@ -96,7 +96,7 @@ scene_one_dialogue = " YOUR-DIALOGUE-HERE  "
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
 s1_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
-# ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
+#  ex:  s#_glib_word_types = ["singular noun", "singular noun", "adjective", "plural noun", "verb", "adjective"]
 ################
 ################
 ###Scene Two Dialogue (Write it inside the quotation marks):
@@ -108,7 +108,7 @@ scene_two_dialogue = " YOUR-DIALOGUE-HERE  "
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
 s2_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
-# ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
+#  ex:  s#_glib_word_types = ["singular noun", "singular noun", "adjective", "plural noun", "verb", "adjective"]
 ################
 ################
 ###Scene Three Dialogue (Write it inside the quotation marks):
@@ -119,7 +119,7 @@ scene_three_dialogue = " YOUR-DIALOGUE-HERE  "
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
 s3_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
-# ex:  s#_glib_word_types = ["noun", "noun", "adjective", "noun", "verb", "adjective"]
+#  ex:  s#_glib_word_types = ["singular noun", "singular noun", "adjective", "plural noun", "verb", "adjective"]
 ################
 ################
 
@@ -171,12 +171,16 @@ s1_glib_word_types.each do |word_type|
   i += 1
 end
 
+WordBlank.create(scene: scene_two, scene_position: 0, word_type: "caption")
+
 
 i = 1
 s2_glib_word_types.each do |word_type|
   WordBlank.create(scene: scene_two, scene_position: i, word_type: word_type)
   i += 1
 end
+
+WordBlank.create(scene: scene_three, scene_position: 0, word_type: "caption")
 
 
 i = 1

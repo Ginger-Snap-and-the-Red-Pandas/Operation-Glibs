@@ -4,23 +4,29 @@ require 'json'
 module AnalyzableHelper
 
   def self.picling(user_url)
-      pic_data_set = self.pic_call(user_url)
-      #Refactor lines 9 and 10 if possible
-      if pic_data_set.is_a? String
-        return pic_data_set
-      end
-      pulled_tags = pic_data_set[0]
-      pulled_caption = pic_data_set[1]
-      pulled_POS = self.ling_call(pulled_tags)
-      organized_data = self.arrange_photo_data(pulled_caption, pulled_tags, pulled_POS)
-      return [pulled_caption, organized_data]
+    pic_data_set = self.pic_call(user_url)
+      #This is for error handling, if photos are too large for api request
+    if pic_data_set.is_a? String
+      return pic_data_set
+    end
+
+    pulled_tags = pic_data_set[0]
+    pulled_caption = pic_data_set[1]
+    pulled_POS = self.ling_call(pulled_tags)
+
+    # Write another Josh error here
+    if pulled_POS.is_a? String
+      return pulled_POS
+    end
+
+    organized_data = self.arrange_photo_data(pulled_caption, pulled_tags, pulled_POS)
+    return [pulled_caption, organized_data]
   end
 
 
 private
   def self.arrange_photo_data(pulled_caption, pulled_tags, pulled_POS)
     organized_data = Hash[pulled_tags.zip(pulled_POS)]
-    # organized_data[:caption] = pulled_caption
     organized_data
   end
 
@@ -41,7 +47,6 @@ private
         http.request(request)
     end
 
-    # puts response.body
     photo_data = JSON.parse(response.body)
     if photo_data["description"] == nil
       @error = "Error, going back to the top-side to tell everyone about it!!!"
@@ -56,7 +61,7 @@ private
   end
 
   def self.ling_call(word_array)
-    word_string = word_array.join(" ")
+    word_string = word_array.join(",")
     uri = URI('https://westus.api.cognitive.microsoft.com/linguistics/v1.0/analyze')
     uri.query = URI.encode_www_form({
         # 'visualFeatures' => 'Description',
@@ -76,9 +81,11 @@ private
           http.request(request)
       end
 
-    # puts response.body
     ling_data = JSON.parse(response.body)
+
     word_pos = ling_data[0]["result"]
-    return word_pos.flatten
+    word_pos = word_pos.flatten
+    word_pos.delete(",")
+    return word_pos
   end
 end

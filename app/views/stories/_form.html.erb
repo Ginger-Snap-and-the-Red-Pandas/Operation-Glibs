@@ -3,7 +3,7 @@
   <p> <%= @error %> </p>
 <% end %>
 
-<%= form_with(model: @story, local: true) do |form| %>
+<%= form_with(url: genre_script_stories_path(@genre, @script, @story), model: @story, local: true) do |form| %>
   <% if @story.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being told:</h2>
@@ -20,13 +20,24 @@
     <%= form.text_field :name, id: :story_title, placeholder: "Story Title" %>
   </div>
   <div class="field">
-    <%= form.text_field :url1, id: :picture_url, placeholder: "Act 1 URL" %>
+    <%= form.label :image1, "Photo for Act One:" %>
+    <br>
+    <%= form.file_field :image1, id: :user_image, placeholder: "Act 1 URL" %>
   </div>
   <div class="field">
-    <%= form.text_field :url2, id: :picture_url, placeholder: "Act 2 URL" %>
+    <%= form.label :image2, "Photo for Act Two:" %>
+    <br>
+    <%= form.file_field :image2, id: :user_image, placeholder: "Act 2 URL" %>
   </div>
   <div class="field">
-    <%= form.text_field :url3, id: :picture_url, placeholder: "Act 3 URL" %>
+    <%= form.label :image3, "Photo for Act Three:" %>
+    <br>
+    <%= form.file_field :image3, id: :user_image, placeholder: "Act 3 URL" %>
+  </div>
+
+  <div class="field">
+    <%= form.check_box :public, id: :public %>
+    <%= form.label :public, "Make my story public to the adoring masses!" %>
   </div>
 
   <div class="actions">
