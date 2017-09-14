@@ -26,8 +26,7 @@ grabPreviousScene = function(){
 
 renderScene = function(event){
   event.preventDefault();
-  var $button = $(this);
-  var url = $button.attr('href');
+  var url = $(this).attr('href');
   $.ajax({
     method: "GET",
     url: url
@@ -39,8 +38,7 @@ renderScene = function(event){
 
 renderFirstScene = function(event){
   event.preventDefault();
-  var $button = $(this);
-  var url = $button.attr('href');
+  var url = $(this).attr('href');
   $.ajax({
     method: "GET",
     url: url
