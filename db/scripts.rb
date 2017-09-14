@@ -81,44 +81,42 @@
 
 ##################
 ################
-script_title = " YOUR-TITLE-HERE "
+script_title = "Why I Wasn't Here"
 
 
 
 ################
 ################
 ###Scene One Dialogue (Write it inside the quotation marks):
-scene_one_dialogue = " YOUR-DIALOGUE-HERE  "
+scene_one_dialogue = " As many of you know, I was not here today for our meeting on *caption. Well, lend me your *word my *word! For I have a *word to tell."
 
 
 
 
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
-s1_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
+s1_glib_word_types = [ "singular noun", "plural noun",  "singular noun"]
 #  ex:  s#_glib_word_types = ["singular noun", "singular noun", "adjective", "plural noun", "verb", "adjective"]
 ################
 ################
 ###Scene Two Dialogue (Write it inside the quotation marks):
-scene_two_dialogue = " YOUR-DIALOGUE-HERE  "
+scene_two_dialogue = " I faced many *word and *caption. In fact, while *word to tell this tale, I even now struggle to find the *word words..."
 
 
 
 
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
-s2_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
+s2_glib_word_types = [ "plural noun", "verb", "adjective"]
 #  ex:  s#_glib_word_types = ["singular noun", "singular noun", "adjective", "plural noun", "verb", "adjective"]
 ################
 ################
 ###Scene Three Dialogue (Write it inside the quotation marks):
-scene_three_dialogue = " YOUR-DIALOGUE-HERE  "
-
-
+scene_three_dialogue = " ...and so concludes my *word on *caption, for it appears we are out of time! Thank you very much fellow *word. Safe *word home."
 
 
 #Write your glib-word-tyoes in the array below (e.g. "noun", "verb", or "adjective")
-s3_glib_word_types = [ ENTER-GLIB-TYPES-HERE ]
+s3_glib_word_types = [ "singular noun", "plural noun", "verb" ]
 #  ex:  s#_glib_word_types = ["singular noun", "singular noun", "adjective", "plural noun", "verb", "adjective"]
 ################
 ################
