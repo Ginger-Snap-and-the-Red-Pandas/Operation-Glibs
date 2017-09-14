@@ -1,24 +1,24 @@
 
 /*MOBILE STYLES */
 @media (max-width: 481px) {
-#genre-title {
-  margin-top: 50%;
-  margin-left: 15%;
+  #genre-title {
+    margin-top: 50%;
+    margin-left: 15%;
 
-}
-#character-genre {
-  position: fixed;
-  width: 400px;
-  height: 240px;
-  left: 10%;
-  background: url("<%= asset_path 'alientwo.png' %>");
-  animation: play 0.7s steps(4) infinite;
+  }
+  #character-genre {
+    position: fixed;
+    width: 400px;
+    height: 240px;
+    left: 10%;
+    background: url("<%= asset_path 'alientwo.png' %>");
+    animation: play 0.7s steps(4) infinite;
 
-}
+  }
 
-@keyframes play {
-   100% { background-position: -1280px; }
-}
+  @keyframes play {
+     100% { background-position: -1280px; }
+  }
 }
 
 
@@ -28,35 +28,35 @@
 /*DESKTOP STYLES*/
 @media (min-width: 481px) {
 
-#genre-container {
-  position: relative;
-  margin-left: 25%;
-  margin-right: 25%;
-  border: solid;
-  max-width: 700px;
+  #genre-container {
+    position: relative;
+    margin-left: 25%;
+    margin-right: 25%;
+    border: solid;
+    max-width: 700px;
 
-}
+  }
 
 
-#genre-title {
-  position: absolute;
-  margin-top: 25%;
-  margin-left: 18%
+  #genre-title {
+    position: absolute;
+    margin-top: 25%;
+    margin-left: 18%
 
-}
+  }
 
-#character-genre {
-  position: absolute;
-  left: 10%;
-  bottom: 10%;
-  width: 400px;
-  height: 240px;
-  background: url("<%= asset_path 'alientwo.png' %>");
-  animation: play 0.7s steps(4) infinite;
+  #character-genre {
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    width: 400px;
+    height: 240px;
+    background: url("<%= asset_path 'alientwo.png' %>");
+    animation: play 0.7s steps(4) infinite;
 
-}
+  }
 
-@keyframes play {
-   100% { background-position: -1280px; }
-}
+  @keyframes play {
+     100% { background-position: -1280px; }
+  }
 }
