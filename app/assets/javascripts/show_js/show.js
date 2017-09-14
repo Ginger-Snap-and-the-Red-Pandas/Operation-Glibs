@@ -1,4 +1,10 @@
 var showPage;
+var grabFirstScene;
+var grabNextScene;
+var grabPreviousScene;
+var renderScene;
+var renderFirstScene;
+var removeCurtainRise;
 
 $(document).ready(function(){
   grabFirstScene();
@@ -6,24 +12,33 @@ $(document).ready(function(){
   grabPreviousScene();
 })
 
-
-var grabFirstScene = function(){
-  $('#first-scene-button').on("click", renderNextScene);
+grabFirstScene = function(){
+  $('#first-scene-button').on("click", renderFirstScene);
 }
 
-var grabNextScene = function(){
-  $('#show-act').on("click", '#next-button', renderNextScene);
+grabNextScene = function(){
+  $('#show-act').on("click", '#next-button', renderScene);
 }
 
-var grabPreviousScene = function(){
-  $('#show-act').on("click", '#previous-button', renderNextScene);
+grabPreviousScene = function(){
+  $('#show-act').on("click", '#previous-button', renderScene);
 }
 
-var renderNextScene = function(event){
+renderScene = function(event){
   event.preventDefault();
-  var $button = $(this);
-  var url = $button.attr('href');
-  console.log(url);
+  var url = $(this).attr('href');
+  $.ajax({
+    method: "GET",
+    url: url
+  }).done(function(response){
+    $("#show-act").html(response);
+    removeCurtainRise();
+  })
+}
+
+renderFirstScene = function(event){
+  event.preventDefault();
+  var url = $(this).attr('href');
   $.ajax({
     method: "GET",
     url: url
@@ -34,4 +49,9 @@ var renderNextScene = function(event){
 
 showPage = function(){
   console.log("hot doggo");
+}
+
+removeCurtainRise = function(){
+  var $curtainImage = $('#show-act').find('#rising-curtain');
+  $($curtainImage).empty();
 }
