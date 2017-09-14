@@ -1,4 +1,10 @@
 var showPage;
+var grabFirstScene;
+var grabNextScene;
+var grabPreviousScene;
+var renderScene;
+var renderFirstScene;
+var removeCurtainRise;
 
 $(document).ready(function(){
   grabFirstScene();
@@ -6,27 +12,35 @@ $(document).ready(function(){
   grabPreviousScene();
 })
 
-
-var grabFirstScene = function(){
-  $('#first-scene-button').on("click", renderNextScene);
-  // releaseCurtain();
+grabFirstScene = function(){
+  $('#first-scene-button').on("click", renderFirstScene);
 }
 
-var grabNextScene = function(){
-  releaseCurtain();
-  $('#show-act').on("click", '#next-button', renderNextScene);
-
+grabNextScene = function(){
+  $('#show-act').on("click", '#next-button', renderScene);
 }
 
-var grabPreviousScene = function(){
-  $('#show-act').on("click", '#previous-button', renderNextScene);
+grabPreviousScene = function(){
+  $('#show-act').on("click", '#previous-button', renderScene);
 }
 
-var renderNextScene = function(event){
+renderScene = function(event){
   event.preventDefault();
   var $button = $(this);
   var url = $button.attr('href');
-  console.log(url);
+  $.ajax({
+    method: "GET",
+    url: url
+  }).done(function(response){
+    $("#show-act").html(response);
+    removeCurtainRise();
+  })
+}
+
+renderFirstScene = function(event){
+  event.preventDefault();
+  var $button = $(this);
+  var url = $button.attr('href');
   $.ajax({
     method: "GET",
     url: url
@@ -39,7 +53,7 @@ showPage = function(){
   console.log("hot doggo");
 }
 
-var releaseCurtain = function(event){
-  console.log('potato');
-  $('#show-act').find('.curtain-front').removeClass('animated slideOutUp')
+removeCurtainRise = function(){
+  var $curtainImage = $('#show-act').find('#rising-curtain');
+  $($curtainImage).empty();
 }
