@@ -1,10 +1,19 @@
-<%= render 'stories/form' %>
+  <%= image_tag(asset_path('curtain.png'), class: "curtain-show" )%>
+<div id="scripts-show">
 
-<h3><%= @script.name %></h3>
-<% if @script_scenes_dialogues  %>
-  <% @script_scenes_dialogues.each do |scene_dialogue| %>
-    <p><%= scene_dialogue %></p>
+  <%= render 'stories/form' %><br>
+  <% if @random_story != nil %>
+  <%= link_to "See a Random #{@script.name} Story", story_path(@random_story.share_url) %>
   <% end %>
-<% end %>
+
+  <div id="script">
+    <h3><%= @script.name %></h3>
+    <% if @script_scenes_dialogues  %>
+      <% @script_scenes_dialogues.each do |scene_dialogue| %>
+        <p><%= scene_dialogue %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 
