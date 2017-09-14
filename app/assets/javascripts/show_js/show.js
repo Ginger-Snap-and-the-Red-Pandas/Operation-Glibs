@@ -9,10 +9,13 @@ $(document).ready(function(){
 
 var grabFirstScene = function(){
   $('#first-scene-button').on("click", renderNextScene);
+  // releaseCurtain();
 }
 
 var grabNextScene = function(){
+  releaseCurtain();
   $('#show-act').on("click", '#next-button', renderNextScene);
+
 }
 
 var grabPreviousScene = function(){
@@ -34,4 +37,9 @@ var renderNextScene = function(event){
 
 showPage = function(){
   console.log("hot doggo");
+}
+
+var releaseCurtain = function(event){
+  console.log('potato');
+  $('#show-act').find('.curtain-front').removeClass('animated slideOutUp')
 }
