@@ -7,6 +7,6 @@
   </div>
 
   <% if @story != nil %>
-  <%= link_to "See a Random #{@genre.genre_name} Story", story_path(@story.share_url) %>
+  <%= link_to "See a Random #{@genre.genre_name} Story", story_path(@story.share_url), id: "random-story" %>
   <% end %>
 </div>
