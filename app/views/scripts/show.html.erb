@@ -1,7 +1,7 @@
+  <%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
 <div id="scripts-show">
 
   <%= render 'stories/form' %><br>
-  <%= image_tag(asset_path('curtain.png'), class: "curtain" )%>
   <% if @random_story != nil %>
   <%= link_to "See a Random #{@script.name} Story", story_path(@random_story.share_url) %>
   <% end %>
